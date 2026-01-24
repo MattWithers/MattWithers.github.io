@@ -1,157 +1,154 @@
-<!DOCTYPE html>
-<html><head>
-<link rel="icon" href="img/fathers_eye_holiday.png">
-    <title>l a v e n d e r / k r i e m h i l d s</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="romantia.css" type="text/css">
-    <link href="js/style-my-tooltips.css" rel="stylesheet" type="text/css"/>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-    <script src="js/jquery.style-my-tooltips.js"></script>
-    <link  href="js/jquery.fancybox.css" rel="stylesheet">
-    <script src="js/jquery.fancybox.js"></script>
-    <script>
-    (function($){
-        $(document).ready(function(){
-            $("[title]").style_my_tooltips();
-        });
-    })(jQuery);
-    </script>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" charset="utf-8"></script>
+
+    <link rel="alternate" type="application/rss+xml" href="https://kayleerowena.com/rss.xml" title="RSS">
+
+    <link href="_css/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="_css/home.css" rel="stylesheet" type="text/css" media="all">
+
+
+    <link rel="icon" type="image/x-icon" href="https://kayleerowena.com/_images/favicon1.png"><meta charset="utf-8">    <!-- HTML Meta Tags -->
+      <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="kaylee rowena" />
+        <meta property="og:image" content="https://kayleerowena.com/_images/housepreview.png"/>
+    <meta property="og:url" content="https://kayleerowena.com/" />
+<meta property="og:title" content="kaylee rowena" />
+<meta property="og:description" content="comic creator & fan of ghosts" />
+    <title>kaylee rowena</title>
     <style>
-        /* customizable snowflake styling */
-        .snowflake {
-            color: #fff;
-            font-size: 1em;
-            font-family: Arial, sans-serif;
-            text-shadow: 0 0 5px #fff;
-        }
-        @-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s}
+    .extra {
+      position: absolute;
+      bottom:20px;
+      right:40px; }
+       .extraextra {
+        position:absolute;
+        left:-25%;
+        width:100px;
+        height:100px;
+        display:block;
+        text-align:center;
+        /* border:1px red solid */
+      }
+      .extraextra::before {
+        content: "\2739";
+position:absolute;
+height:100px;
+width:100px;
+left:-35px;
+top:0px;
+display:inline;
+
+        text-align:center;
+        font-size:200px;
+        color:var(--med);
+        filter:drop-shadow(0 5px 5px var(--light));
+        z-index:1;
+      }
+      .extraextra a {
+        position:absolute;
+        top:-20px;
+        left:-18px;
+        padding:20px;
+        color:black;
+        z-index:10;
+        font-size:1em;
+        line-height:1em;
+        font-weight:normal;
+        color:white;
+        text-transform:uppercase;
+        text-decoration:none;
+        font-family:'Basteleur', sans-serif;
+      }
+      .extraextra a:hover {
+        color:var(--light);
+        background:transparent
+      }
+      .extraextra:has(a:hover)::before {
+        color:black
+      }
     </style>
-    <div class="snowflakes" aria-hidden="true">
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-    </div>
-</head>
-<!--i am evil. i am god. i am demons. i am here.-->
-<body>
-    <div id="bloodletter">
-        <div id="chikage">
-            <img src="img/holidays.png">
-        </div>
-    </div>
-    <div id="logarius">
-        <div id="lancer">
-            <div id="brynhildr">
-                <div class="izou">purge me with hyssop...</div>
-                    <p>"kriemhilds" comes from the fictional lance <a href="https://fireemblem.fandom.com/wiki/Kriemhild" target="_blank">kriemhild</a> that is exclusive to the character <a href="https://fireemblem.fandom.com/wiki/Berkut" target="_blank">berkut</a> from <a href="https://en.wikipedia.org/wiki/Fire_Emblem_Echoes:_Shadows_of_Valentia" target="_blank">fire emblem: shadows of valentia</a>. that lance is named after <a href="https://en.wikipedia.org/wiki/Gudrun" target="_blank">kriemhild/gudrun</a>, who appears in the epics <a href="https://en.wikipedia.org/wiki/Nibelungenlied" target="_blank">nibelungenlied</a>, <a href="https://en.wikipedia.org/wiki/V%C3%B6lsunga_saga" target="_blank">völsunga saga</a>, and many other germanic works.</p>
-                <div class="izou">and i shall be clean: wash me...</div>
-                    <p>fear thy not, for i am with thee: be not dismayed; for i am god: i will strengthen thee; i will uplhold thee with the right hand of my righteousness.</p>
-                    <p><center>wy ysejv bc bnynzbz.</center></p>
-                <div class="caster" style="margin-top: -5px;">
-                    <img src="img/lancer/seliphsays.png" title="play genealogy of the holy war">
-                </div>
-                <p style="margin-top: 35px;">play fire emblem: genealogy of the holy war (1996).</p>   
-                <div class="rider">
-                    <a href="https://en.wikipedia.org/wiki/Bloodborne" target="_blank"><img src="img/lancer/bloodborne.png" title="bloodborne"></a>
-                    <a href="https://en.wikipedia.org/wiki/Fire_Emblem:_Genealogy_of_the_Holy_War" target="_blank"><img src="img/lancer/genealogy.png" title="fire emblem: genealogy of the holy war"></a>
-                    <a href="https://en.wikipedia.org/wiki/EarthBound" target="_blank"><img src="img/lancer/earthbound.png" title="earthbound"></a>
-                    <a href="https://en.wikipedia.org/wiki/Silent_Hill_2" target="_blank"><img src="img/lancer/silenthill2.png" title="silent hill 2"></a>
-                </div>
-                <div class="izou">and i shall be whiter than snow...</div>
-                    <div class="caster">
-                    <img src="img/banner/kriemhilds.gif">
-                    <br><img src="img/banner/kriemhilds_alt.gif">
-                    </div>
-                    <p style="margin-top: 20px;">Feel free to add my banner to your site if you'd like ก₍⸍⸌̣ʷ̣̫⸍̣⸌₎ค</p>
-            </div>
-        </div>
-        <div id="saber">
-            <div id="sigurd">
-                <a href="martyr.html"><img src="img/saber/martyr.png" title="about"></a>
-                <a href="chalice.html"><img src="img/saber/chalice.png" title="devblog"></a>
-                <a href="diarium.html"><img src="img/saber/diarium.png" title="diary"></a>
-                <a href="galeria.html"><img src="img/saber/galeria.png" title="my art"></a>
-                <a href="altar.html"><img src="img/saber/altar.png" title="shrines"></a>
-                <img src="img/saber/libraria.png" title="coming soon">
-                <a href="regesta.html"><img src="img/saber/regesta.png" title="special thanks"></a>
-            </div>
-        </div>
-        <div id="saber"  style="margin-top: 15px;">
-            <div id="sigurd">
-                <div class="izou" style="text-align: center; margin-bottom:5px; width: 97%;">views</div>
-                    <span id="hitcount"></span>
-            </div>
-        </div>
-        <div id="saber"  style="margin-top: 15px;">
-            <div id="sigurd" style="text-align: left;">
-                <div class="izou" style="text-align: center; margin-bottom:5px; width: 97%;">updates</div>
-                    <span>12/30/22</span><br>— html+css edits
-                    <span>11/30/22</span><br>— eotw update
-                    <br><center><a data-fancybox data-src="#cherub" href="javascript:;">✟ see all ✟	</a></center>
-            </div>
-        </div>
-        <div id="cherub">
-            <div class="izou" style="margin-top:15px;">updates</div>
-            <p><span>12/30/22</span> — html+css edits</p>
-            <p><span>11/30/22</span> — edge of the world update</p>
-            <p><span>01/27/21</span> — html+css edits / pages cleanup / new counter</p>
-            <p><span>07/05/20</span> — with_you.html</p>
-            <p><span>05/26/20</span> — bryn shrine up</p>
-            <p><span>05/08/20</span> — izou shrine up</p>
-            <p><span>04/08/20</span> — img edits; lots of resizing and reorganizing</p>
-            <p><span>03/17/20</span> — css overhaul; code cleanup; multiple pages revamped</p>
-            <p><span>02/20/20</span> — arknights up on logbook</p>
-            <p><span>02/17/20</span> — /pale_rider/ up</p>
-            <p><span>02/03/20</span> — logbook up</p>
-            <p><span>02/01/20</span> — galeria up</p>
-            <p><span>12/01/19</span> — christmas theme is live</p>
-            <p><span>11/30/19</span> — css cleanup; img edits</p>
-            <p><span>11/20/19</span> — new site buttons</p>
-            <p><span>11/18/19</span> — css overhaul; galeria removed for fixes</p>
-            <p><span>11/12/19</span> — martyr revamped</p>
-            <p><span>11/01/19</span> — sitemap + css edits</p>
-            <p><span>09/14/19</span> — diarium up; html/css edits</p>
-            <p><span>09/13/19</span> — css/html edits; renaming; tooltips added</p>
-            <p><span>09/07/19</span> — renaming; css edits</p>
-            <p><span>09/06/19</span> — sitemap up; renamed pages; png edits</p>
-            <p><span>09/05/19</span> — galeria up; small edits</p>
-            <p><span>09/04/19</span> — lavender + link edits</p>
-            <p><span>08/30/19</span> — altar up</p>
-            <p><span>07/19/19</span> — martyr revamped</p>
-            <p><span>07/07/19</span> — png replacements; html/css changes</p>
-            <p><span>07/04/19</span> — chalice up; more html/css edits</p>
-            <p><span>07/03/19</span> — png replacements; txt log added; 404 page edited</p>
-            <p><span>07/01/19</span> — html+css edits</p>
-            <p><span>03/16/19</span> — site up with all assets</p>
-            <p><span>07/03/18</span> — site created</p>
-        </div>
-        <div class="assassin">kriemhilds © 2018 - 2023</div>
-    </div>
-    <script>
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var site_data = JSON.parse(this.responseText);
-                var num_arr = site_data.info.views.toString().split("");
-                var num_str = "";
-                for (i = 0; i < num_arr.length; i++) {
-                    num_str += num_arr[i];
-                    if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
-                }
-                document.getElementById("hitcount").innerHTML = num_str;
-            }
-        };
-        xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=kriemhilds", true);
-        xhttp.send();
-    </script>
-</body>
-</html>
+  </head>
+  <body id="homepage"><link href="mailto:kayleerowena@gmail.com" rel="me">
+  <link rel="webmention" href="https://webmention.io/kayleerowena.com/webmention" />
+
+    <header>
+      </header>
+      
+    <div id="container">
+     
+<aside class="left"> 
+
+<!--<div class="extraextra no-outlink"> -->
+<!--    <a href="https://kayleerowena.bigcartel.com">shop-->
+<!--      <br>open!</a> -->
+<!--</div>-->
+
+<!--<div class="box">-->
+<!--  <b>next event:</b> -->
+<!--???-->
+<!--  </div>-->
+<!--<div class="box">-->
+<!--  <b>what's new:</b> catching up on commissions!-->
+<!--  </div>-->
+        <div class="nav">
+<a href="comics">comics</a>
+<a href="illustration">illustration</a>
+
+<a href="zines">zines</a>
+<a href="projects">projects</a>
+
+</div>
+<div class="socials no-outlink justify">
+<a href="https://kayleerowena.tumblr.com"><img src="/_images/site/tumblr.png" alt="tumblr"></a>
+<a href="https://bsky.app/profile/kayleerowena.com"><img src="/_images/site/bsky.png" alt="bluesky"></a>
+<a href="https://instagram.com/kayleerowena"><img src="/_images/site/insta.png" alt="instagram"></a>
+</div>
+<div class="socials no-outlink justify">
+
+<a href="https://patreon.com/kayleerowena"><img src="/_images/site/patreon.png" alt="patreon"></a>
+<a href="https://ko-fi.com/kayleerowena"><img src="/_images/site/kofi.png" alt="tip jar"></a>
+<a href="/rss"><img src="/_images/site/rss.png" alt="rss"></a>
+<a href="https://buttondown.email/kayleerowena"><img src="/_images/site/news.png" alt="newsletter"></a>
+
+</div>
+
+</aside>
+
+<main class="center">
+<img src="_images/house.png">
+  </main>
+
+<aside class="right">
+
+    <div class="nav">
+  <a href="about">about</a>
+  <a href="shop">shop</a>
+  <a href="blog">journal</a>
+</div>
+<div class="box">
+  <b>currently:</b>
+  <br>
+  <div id="currently">
+  </div>
+</div>
+
+    <div class="nav">
+      <a href="links">links out</a>
+      <a href="guestbook">guestbook</a>
+</div>
+
+</aside>
+
+<div class="extra no-outlink">
+<a href="https://www.pcrf.net/"><img src="https://hillhouse.neocities.org/_images/toybox/_buttons/standwith.png" alt=""></a>
+</div>
+</div>
+<!--<footer>-->
+<!--</footer>-->
+  </body>
+  <script src="_scripts/autoload.js" charset="utf-8"></script>
+  <!--<script src="_scripts/tooltips.js" charset="utf-8"></script>-->
+ </html>
