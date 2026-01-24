@@ -1,0 +1,188 @@
+
+/* homepage */
+body#homepage main img {
+  max-width:300px;
+  margin:-120px auto;
+  text-align:center;
+}
+.nav {
+max-width:100%;
+text-align:center}
+.nav a {
+  display:block;
+  width:60%;
+  background:var(--light);
+  padding:5px;
+  margin:20px auto;
+  border:1px var(--dark) solid;
+  border-radius:5px;
+  color:var(--black);
+  font-size:1.1em;
+  font-style:italic;
+  text-decoration:none
+}
+/*body#homepage {*/
+/*  max-height:90vh;*/
+/*  overflow-y:hidden;*/
+/*}*/
+
+body#homepage main {
+max-width:300px;
+flex:0 2 300px;
+margin:0 20px;
+}
+body#homepage #container {
+gap:0
+}
+
+body#homepage aside {
+max-width:200px;
+flex:1 2 170px;
+display:block;
+
+}
+
+body#homepage aside.right {
+transform:rotate(2deg)
+}
+body#homepage aside.left {
+transform:rotate(-1deg)
+}
+
+body#homepage .nav a {
+width:100%
+}
+
+body#homepage .box {
+margin:15px auto;
+  vertical-align:middle;
+  max-height:150px;
+  overflow-y:scroll
+}
+body#homepage .box.important {
+
+outline-offset:3px;
+text-align:center;
+border:1px solid var(--med);
+box-shadow:var(--med) 5px 5px, var(--light) -5px -5px
+}
+
+#statuscafe-username a {
+display:none
+}
+.box.statuscafe small, .box.statuscafe small a {
+color:var(--med) !important;
+}
+#statuscafe, #statuscafe-username, #statuscafe-content {
+display:inline;
+}
+.socials {
+width:100%;
+gap:0;
+/* display:flex;
+flex-flow:row wrap;
+justfy-content:space-between; */
+  border-radius:5px}
+.socials a {
+display:inline-block;
+line-height:0;
+padding:0;
+margin:2px auto;
+background:var(--white);
+border-radius:5px;
+position:relative;
+&[href*="tumblr"] 	{
+  --social: "tumblr"
+}
+&[href*="bsky"] 	{
+  --social: "bsky"
+}
+&[href*="instagram"] 	{
+  --social: "insta"
+}
+&[href*="patreon"] 	{
+  --social: "patreon"
+}
+&[href*="ko-fi"] 	{
+  --social: "ko-fi"
+}
+&[href*="rss"] 	{
+  --social: "rss"
+}
+&[href*="buttondown"] 	{
+  --social: "news"
+}
+}
+.socials img {
+  height:20px;
+  width:20px;
+  padding:12px;
+  box-sizing: content-box;
+  max-height:20px !important;
+  max-width:20px !important;
+}
+.socials a:hover {
+  background:var(--light);
+  img {
+    mix-blend-mode: multiply
+  }
+  &::after {
+    content:var(--social);
+    color:var(--white);
+    border:1px var(--light) solid;
+    background:var(--med);
+    display:block;
+    font-weight:bold;
+    font-size:.8em;
+
+    position:absolute;
+    letter-spacing:normal;
+    bottom:-25px;
+    border-radius:3px;
+    z-index:10;
+    left:-6px;
+    width:54px;
+    padding:1px;
+    text-align:center;
+    line-height:1.5em;
+  }
+  }
+
+@media screen and (max-width:880px) {
+  body#homepage {
+      overflow-y:scroll
+  }
+body#homepage main {
+  order:2;
+  position:absolute;
+  z-index:-1;
+  top:25%;
+  opacity:.5;
+  transition:.5s;
+}
+body#homepage aside {
+  margin:0px auto;
+  transform:rotate(0deg) !important
+}
+body#homepage aside.left {
+  margin-top:20px;
+}
+}
+
+
+@media screen and (max-width:500px) {
+ /*#container { overflow-x:hidden !important }*/
+ /*img { max-width:50vw }*/
+body#homepage main {
+
+  /*overflow-x:hidden;position:fixed;*/
+}
+body#homepage .head {
+  border-radius:0px
+}
+}
+
+@media screen and (max-height:700px) {
+  body#homepage {
+    overflow-y:scroll }
+  }
