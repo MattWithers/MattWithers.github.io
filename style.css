@@ -12,50 +12,13 @@
 	--whitergb:253,232,229,;
 }
 
-
 @font-face {
-	font-family: 'Fira Code';
-	src: url('/_parts/fonts/FiraCode-Light.woff2') format('woff2'),
-		url("/_parts/fonts/FiraCode-Light.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Advercase';
+  src: url('AdvercaseFont-Demo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@font-face {
-	font-family: 'Fira Code';
-	src: url('/_parts/fonts/FiraCode-Medium.woff2') format('woff2'),
-		url("/_parts/fonts/FiraCode-Medium.woff") format("woff");
-	font-weight: bold;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Victor Mono';
-	font-style: italic;
-	src: url('https://kayleerowena.com/_parts/fonts/VictorMono-Italic.woff');
-}
-
-@font-face {
-	font-family: 'Victor Mono';
-	font-weight: bold;
-	font-style: italic;
-	src: url('https://kayleerowena.com/_parts/fonts/VictorMono-BoldItalic.woff');
-}
-
-@font-face {
-	font-family: 'Basteleur';
-	src: url('https://kayleerowena.com/_parts/fonts/Basteleur-Bold.woff');
-}
-
-@font-face {
-	font-family: 'Old Cupboard';
-	src: url('https://kayleerowena.com/_parts/fonts/OldCupboard.otf');
-}
-
-@font-face {
-	font-family: 'Solide Mirage';
-	src: url('https://kayleerowena.com/_parts/fonts/Solide_Mirage-Mono_web.woff');
-}
 
 * {
 	box-sizing:border-box;
@@ -79,7 +42,7 @@ body {
 	color:var(--black);
 }
 i, em {
-	font-family:'Victor Mono', monospace;
+	font-family:'Advercase', monospace;
 	font-weight:400;
 	font-style:italic;
 	letter-spacing:normal
@@ -92,7 +55,7 @@ s {
 }
 
 nav b, h2, h3, h4, h5 {
-	font-family:'Victor Mono', monospace;
+	font-family:'Advercase', monospace;
 	font-weight:bold;
 	font-style:italic;
 	letter-spacing:normal
