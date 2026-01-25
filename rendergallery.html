@@ -133,4 +133,373 @@
     html:not(.touch) .gallery-image:hover figcaption{
       color: rgba(255,255,255,1);
       text-shadow: 0 0 1px rgba(0,0,0,.2);
-      transition: all .2s e
+      transition: all .2s ease .3s;
+    }
+
+    html:not(.touch) .gallery-image:hover figcaption::before,
+    html:not(.touch) .gallery-image:hover figcaption::after{
+      opacity: 1;
+    }
+
+    html:not(.touch) .gallery-image:hover figcaption::before{
+      right: -1.5em;
+      bottom: -1.5em;
+    }
+
+    html:not(.touch) .gallery-image:hover figcaption::after{
+      left: -1.5em;
+      top: -1.5em;
+    }
+
+    /* Touch: show caption near bottom (your .touch adjustments) */
+    html.touch .gallery-image figcaption{
+      color: rgba(255,255,255,1);
+      text-shadow: 0 0 1px rgba(0,0,0,.2);
+      top: auto;
+      bottom: 2em;
+      transform: translate(-50%,0);
+    }
+    html.touch .gallery-image figcaption::before,
+    html.touch .gallery-image figcaption::after{
+      opacity: 1;
+      right: -1.5em;
+      bottom: -1.5em;
+    }
+    html.touch .gallery-image figcaption::after{
+      left: -1.5em;
+      top: -1.5em;
+      right: auto;
+      bottom: auto;
+    }
+
+    /* Magnific Popup zoom class block */
+    .mfp-with-zoom .mfp-container,
+    .mfp-with-zoom.mfp-bg{
+      opacity: 0;
+      backface-visibility: hidden;
+      transition: all 0.3s ease-out;
+    }
+
+    .mfp-with-zoom.mfp-bg{
+      background-color: rgba(0,0,0,.9);
+    }
+
+    .mfp-with-zoom.mfp-ready .mfp-container{
+      opacity: 1;
+    }
+    .mfp-with-zoom.mfp-ready.mfp-bg{
+      opacity: 1;
+    }
+
+    .mfp-with-zoom.mfp-removing .mfp-container,
+    .mfp-with-zoom.mfp-removing.mfp-bg{
+      opacity: 0;
+    }
+
+    .mfp-with-zoom img.mfp-img{
+      padding: 0;
+    }
+    .mfp-with-zoom .mfp-figure:after{
+      top: 0;
+      bottom: 0;
+    }
+    .mfp-with-zoom .mfp-container{
+      padding: 0;
+    }
+    .mfp-with-zoom .mfp-content{
+      overflow: hidden;
+    }
+    .mfp-with-zoom .mfp-bottom-bar{
+      top: auto;
+      bottom: 0;
+      margin-top: 0;
+    }
+
+    /* Use the same caption style for popup title */
+    .mfp-with-zoom .mfp-title{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      color: rgba(255,255,255,0);
+      padding: 1em;
+      transition: all .2s ease;
+      font-weight: 600;
+      max-width: calc(100% - 9em);
+      line-height: 1.25;
+      text-align: center;
+      box-sizing: border-box;
+      top: auto;
+      bottom: 2em;
+      text-shadow: 0 0 1px rgba(0,0,0,.2);
+      width: auto;
+    }
+
+    .mfp-with-zoom.mfp-ready .mfp-title{
+      color: rgba(255,255,255,1);
+      transition: all .2s ease .3s;
+    }
+
+    /* Arrows */
+    .mfp-arrow{
+      opacity: 1;
+      margin-top: 0 !important;
+      width: 20%;
+      height: 30%;
+      transform: translateY(-50%);
+    }
+
+    .mfp-arrow:before,
+    .mfp-arrow:after{
+      margin: 0;
+      border: none;
+      width: 2rem;
+      height: 2rem;
+      transform: rotate(-45deg) translate(-50%,-100%);
+      opacity: 1;
+      top: 50%;
+      left: 50%;
+      transition: all .15s;
+    }
+
+    .mfp-arrow:active{
+      transform: translateY(-50%) scale(.95);
+    }
+
+    .mfp-arrow-left{ left: 0; }
+    .mfp-arrow-left:before,
+    .mfp-arrow-left:after{
+      border-top: 2px solid white;
+      border-left: 2px solid white;
+      margin-left: 2rem;
+    }
+    .mfp-arrow-left:hover:before,
+    .mfp-arrow-left:active:before{
+      margin-left: 2rem;
+    }
+    .mfp-arrow-left:hover:after,
+    .mfp-arrow-left:active:after{
+      margin-left: 0;
+    }
+
+    .mfp-arrow-right{ right: 0; }
+    .mfp-arrow-right:before,
+    .mfp-arrow-right:after{
+      border-right: 2px solid white;
+      border-bottom: 2px solid white;
+      margin-left: 2rem;
+    }
+    .mfp-arrow-right:hover:before{
+      margin-left: 2rem;
+    }
+    .mfp-arrow-right:hover:after{
+      margin-left: 0;
+    }
+
+    /* Close button */
+    button.mfp-close{
+      opacity: 1;
+      margin-top: 0 !important;
+      width: 20%;
+      height: 30%;
+      font: 0/0 serif;
+      text-shadow: none;
+      color: transparent;
+    }
+
+    button.mfp-close:before,
+    button.mfp-close:after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0;
+      border: none;
+      width: 2rem;
+      height: 2rem;
+      opacity: 1;
+      transition: all .15s;
+      transform-origin: 0 0;
+      border-top: 2px solid white;
+      border-left: 2px solid white;
+    }
+
+    button.mfp-close:before{ transform: rotate(-45deg); }
+    button.mfp-close:after{ transform: rotate(135deg); }
+
+    button.mfp-close:hover:before{ transform: rotate(135deg); }
+    button.mfp-close:hover:after{ transform: rotate(315deg); }
+
+    button.mfp-close:active{ transform: scale(.95); }
+
+    /* Footer */
+    #footer{
+      margin-top: 10vh;
+      padding: 10vh 0;
+      text-align: center;
+    }
+
+    #footer .container{
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    #footer .container:before,
+    #footer .container:after{
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 20px;
+      z-index: 10;
+      border-top: 2px solid;
+      width: 10%;
+      margin-bottom: 10vh;
+    }
+
+    #footer .container:after{
+      left: auto;
+      right: 20px;
+    }
+
+    #footer *{
+      display: block;
+    }
+
+    #footer * + *{
+      margin-top: 5vh;
+    }
+
+    #footer .logo{
+      font-weight: 600;
+      font-size: 1.5em;
+    }
+
+    #footer .copy{
+      text-transform: uppercase;
+      font-size: .75em;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <article class="gallery">
+    <!-- IDs from your original loop -->
+    <a class="gallery-link" href="https://picsum.photos/id/1081/1200/800">
+      <figure class="gallery-image">
+        <img src="https://picsum.photos/id/1081/1200/800" width="1200" height="800" alt="Photo 1081">
+        <figcaption>Photo caption</figcaption>
+      </figure>
+    </a>
+
+    <a class="gallery-link" href="https://picsum.photos/id/1014/1200/1400">
+      <figure class="gallery-image">
+        <img src="https://picsum.photos/id/1014/1200/1400" width="1200" height="1400" alt="Photo 1014">
+        <figcaption>Photo caption</figcaption>
+      </figure>
+    </a>
+
+    <a class="gallery-link" href="https://picsum.photos/id/267/1600/1200">
+      <figure class="gallery-image">
+        <img src="https://picsum.photos/id/267/1600/1200" width="1600" height="1200" alt="Photo 267">
+        <figcaption>Photo caption</figcaption>
+      </figure>
+    </a>
+
+    <a class="gallery-link" href="https://picsum.photos/id/266/1400/1000">
+      <figure class="gallery-image">
+        <img src="https://picsum.photos/id/266/1400/1000" width="1400" height="1000" alt="Photo 266">
+        <figcaption>Photo caption</figcaption>
+      </figure>
+    </a>
+
+    <a class="gallery-link" href="https://picsum.photos/id/634/1200/1600">
+      <figure class="gallery-image">
+        <img src="https://picsum.photos/id/634/1200/1600" width="1200" height="1600" alt="Photo 634">
+        <figcaption>Photo caption</figcaption>
+      </figure>
+    </a>
+
+    <a class="gallery-link" href="https://picsum.photos/id/923/1600/1000">
+      <figure class="gallery-image">
+        <img src="https://picsum.photos/id/923/1600/1000" width="1600" height="1000" alt="Photo 923">
+        <figcaption>Photo caption</figcaption>
+      </figure>
+    </a>
+
+    <a class="gallery-link" href="https://picsum.photos/id/682/1400/1800">
+      <figure class="gallery-image">
+        <img src="https://picsum.photos/id/682/1400/1800" width="1400" height="1800" alt="Photo 682">
+        <figcaption>Photo caption</figcaption>
+      </figure>
+    </a>
+
+    <a class="gallery-link" href="https://picsum.photos/id/173/1600/900">
+      <figure class="gallery-image">
+        <img src="https://picsum.photos/id/173/1600/900" width="1600" height="900" alt="Photo 173">
+        <figcaption>Photo caption</figcaption>
+      </figure>
+    </a>
+
+    <a class="gallery-link" href="https://picsum.photos/id/943/1200/1200">
+      <figure class="gallery-image">
+        <img src="https://picsum.photos/id/943/1200/1200" width="1200" height="1200" alt="Photo 943">
+        <figcaption>Photo caption</figcaption>
+      </figure>
+    </a>
+  </article>
+
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <a class="logo" href="https://codepen.io/collection/XRoxGR" rel="home">Calibration theme</a>
+      <a class="copy" href="https://mobilemarkup.com" target="_blank" rel="noopener">&copy; mobileMarkup.com</a>
+    </div>
+  </footer>
+
+  <!-- jQuery + Magnific Popup JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+  <script>
+    // Touch detection similar to your original CSS logic
+    (function () {
+      var isTouch =
+        ('ontouchstart' in window) ||
+        (navigator.maxTouchPoints && navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints && navigator.msMaxTouchPoints > 0);
+
+      document.documentElement.classList.toggle('touch', !!isTouch);
+    })();
+
+    // Equivalent to your CoffeeScript init
+    $(function () {
+      $('.gallery-link').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        closeBtnInside: false,
+        mainClass: 'mfp-with-zoom mfp-img-mobile',
+        image: {
+          verticalFit: true,
+          titleSrc: function (item) {
+            var caption = item.el.find('figcaption').text();
+            return caption || item.el.attr('title');
+          }
+        },
+        zoom: {
+          enabled: true
+        },
+        gallery: {
+          enabled: true,
+          navigateByImgClick: false,
+          tCounter: ''
+        },
+        disableOn: function () {
+          return $(window).width() > 640;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
