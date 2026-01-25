@@ -7,7 +7,22 @@ Give Credit were it's due, The_Bugs
 	<head>
 		<title>Startpage ~ Hasta</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
-	</head>
+	<style>
+/* Make TrainRide.webm work as the background for .back-img without affecting buttons */
+.back-img{
+  background: none !important;
+  overflow: hidden;
+}
+.back-img video.bgvid{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* never block hover/click */
+}
+</style>
+</head>
 	<body>
 		<div class="search">
 			<form action="javascript:search()">
@@ -20,7 +35,7 @@ Give Credit were it's due, The_Bugs
 			<button type="button" onmouseover="foot()">#</button>
 		</div>
 		
-		<div class="back-img" id="back-img"></div>
+		<div class="back-img" id="back-img"><video id="bgvid" class="bgvid" autoplay muted loop playsinline><source src="TrainRide.webm" type="video/webm"></video></div>
 		<div class="holder">
 		</div>
 		<!--==========Bars==========-->
@@ -30,10 +45,10 @@ Give Credit were it's due, The_Bugs
 			<div class="menu-1">
 				<a href="http://www.zamzar.com">										Zamzar</a><p1>,</p1> &nbsp;&nbsp;
 				<a href="http://www.mediafire.com/myfiles">								Media&nbsp;Fire</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.dropbox.com">										Dropbox</a><p1>,</p1> &nbsp;&nbsp;
+				<a href="https://www.dropbox.com">										Dropbox</a><p1>,</p1> &nbsp;&nbsp;
 				<a href="https://video.online-convert.com/convert-to-webm">				Webm</a><p1>,</p1> &nbsp;&nbsp;
 				<a href="http://www.thepiratebay.org">									The&nbsp;PirateBay</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.torrentz2.eu">										Torrentz</a><p1>,</p1> &nbsp;&nbsp;
+				<a href="https://www.torrentz2.eu">										Torrentz</a><p1>,</p1> &nbsp;&nbsp;
 				<a href="https://goo.gl/">												Google&nbsp;url</a><p1>,</p1> &nbsp;&nbsp;
 				<a href="http://www.vtmp3.cc">											yt&nbsp;-&nbsp;mp3</a>	&nbsp;&nbsp;
 				<a href="#">PNC</a>
@@ -43,9 +58,9 @@ Give Credit were it's due, The_Bugs
 			<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUyNS4xNTIgNTI1LjE1MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTI1LjE1MiA1MjUuMTUyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjEyOHB4IiBoZWlnaHQ9IjEyOHB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDIwLjczNSwzNzEuMjE3Yy0yMC4wMjEsMC0zNy45NDIsNy44NTUtNTEuNTk2LDIwLjI0TDE4MS4xMTIsMjgyLjA5NGMxLjM1Ny02LjA2MSwyLjQwNy0xMi4xNjYsMi40MDctMTguNDY4ICAgYzAtNi4zMDItMS4wNzItMTIuMzg1LTIuNDA3LTE4LjQ2OGwxODUuOTA0LTEwOC4zMzVjMTQuMTc5LDEzLjEyOSwzMi45MzEsMjEuMzM0LDUzLjcxOSwyMS4zMzQgICBjNDMuODI4LDAsNzkuMTQ1LTM1LjI1MSw3OS4xNDUtNzkuMDc5QzQ5OS44OCwzNS4zMzgsNDY0LjU0MSwwLDQyMC43MzUsMGMtNDMuNzQxLDAtNzkuMDc5LDM1LjMzOC03OS4wNzksNzkuMDU3ICAgYzAsNi4zODksMS4wNzIsMTIuMzg1LDIuNDA3LDE4LjQ2OEwxNTguMTU4LDIwNS45NDdjLTE0LjIwMS0xMy4xOTQtMzIuOTMxLTIxLjM3OC01My43NDEtMjEuMzc4ICAgYy00My44MjgsMC03OS4xNDUsMzUuMzE3LTc5LjE0NSw3OS4wNTdzMzUuMzE3LDc5LjA3OSw3OS4xNDUsNzkuMDc5YzIwLjc4NywwLDM5LjU0LTguMjA2LDUzLjcxOS0yMS4zMzRsMTg3LjY5OCwxMDkuNjA0ICAgYy0xLjI5MSw1LjU4LTIuMTAxLDExLjQtMi4xMDEsMTcuMTk5YzAsNDIuNDUsMzQuNTk0LDc2Ljk3OSw3Ni45NzksNzYuOTc5YzQyLjQyOCwwLDc3LjA0NC0zNC41MDcsNzcuMDQ0LTc2Ljk3OSAgIFM0NjMuMTYzLDM3MS4yMTcsNDIwLjczNSwzNzEuMjE3eiIgZmlsbD0iI0ZGRkZGRiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" height="40%"/>
 			<p>Social</p>&nbsp;&nbsp;&nbsp;
 			<div class="menu-2">
-				<a href="http://www.youtube.com">																	YouTube</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.amazon.com">																	Amazon</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.tumblr.com">																	Tumblr</a><p1>,</p1> &nbsp;&nbsp;
+				<a href="https://www.youtube.com">																	YouTube</a><p1>,</p1> &nbsp;&nbsp;
+				<a href="https://www.amazon.com">																	Amazon</a><p1>,</p1> &nbsp;&nbsp;
+				<a href="https://www.tumblr.com">																	Tumblr</a><p1>,</p1> &nbsp;&nbsp;
 				<a href="http://www/netflix.xom">																	Netflix</a><p1>,</p1> &nbsp;&nbsp;
 				<a href="https://www.youtube.com/watch?v=hX3j0sQ7ot8&index=6&list=LL387wBiVf796VXvamnDyMOA">		Chill&nbsp;Music</a><p1>,</p1> &nbsp;&nbsp;
 				<a href="http://www.g2a.com">																		G2A</a> &nbsp;&nbsp;
@@ -76,7 +91,7 @@ Give Credit were it's due, The_Bugs
 				<a href="http://www.stxavier.instructure.com">		Canvas</a><p1>,</p1> &nbsp;&nbsp;
 				<a href="http://www.stxavier.org">					St.&nbsp;Xavier</a><p1>,</p1> &nbsp;&nbsp;
 				<a href="https://www.office.com/?auth=2">			Office&nbsp;365</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.gmail.com">						Gmail</a><p1>,</p1> &nbsp;&nbsp;
+				<a href="https://www.gmail.com">						Gmail</a><p1>,</p1> &nbsp;&nbsp;
 				<a href="https://outlook.office.com/owa/">			Outlook</a><p1>,</p1> &nbsp;&nbsp;
 				<a href="https://www.thingiverse.com/">				Thingiverse</a> &nbsp;&nbsp;
 				<a href="#"></a> &nbsp;&nbsp;
@@ -100,19 +115,35 @@ Give Credit were it's due, The_Bugs
 			</div>
 		</div>
 		<script>
-			function fishy() {
-			document.getElementById("back-img").style.backgroundImage = "url('snowygif.gif')";
-			}
-			function peng() {
-			document.getElementById("back-img").style.backgroundImage = "url('snowygif.gif')";
-			}
-			function foot() {
-			document.getElementById("back-img").style.backgroundImage = "url('snowygif.gif')";
-			}
-			function search(){
-				var query = document.getElementById('search').value;
-				window.location = 'https://www.google.com/#q=' + query;
-			}	
-		</script>
+  function setVideo(src) {
+    const v = document.getElementById("bgvid");
+    if (!v) return;
+
+    let source = v.querySelector("source");
+    if (!source) {
+      source = document.createElement("source");
+      source.type = "video/webm";
+      v.appendChild(source);
+    }
+
+    if (source.getAttribute("src") !== src) {
+      source.setAttribute("src", src);
+      v.load();
+    }
+
+    // Autoplay policies: must be muted (already in markup)
+    v.play().catch(() => {});
+  }
+
+  // All three buttons now show the same video (per your request)
+  function fishy() { setVideo("TrainRide.webm"); }
+  function peng()  { setVideo("TrainRide.webm"); }
+  function foot()  { setVideo("TrainRide.webm"); }
+
+  function search(){
+    var query = document.getElementById('search').value;
+    window.location = 'https://www.google.com/#q=' + query;
+  }
+</script>
 	</body>
 </html>
