@@ -1,102 +1,207 @@
 /*======Fonts====================================*/
 @font-face {
-    font-family: fonty;
-    src: url(AdvercaseFont-Demo-Regular.otf);
+  font-family: fonty;
+  src: url(AdvercaseFont-Demo-Regular.otf);
+}
+
+/*======Page Background (crossfade / "lerp")======================
+  - Default: bg.png
+  - When body has .bg-night: fade to bg2.png
+*/
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* Two fixed layers behind everything */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 800ms linear; /* smooth "lerp" */
+}
+
+.page-bg--day {
+  background-image: url("bg.png");
+  opacity: 1; /* default visible */
+}
+
+.page-bg--night {
+  background-image: url("bg2.png");
+  opacity: 0; /* fades in when .bg-night is set */
+}
+
+body.bg-night .page-bg--day {
+  opacity: 0;
+}
+
+body.bg-night .page-bg--night {
+  opacity: 1;
 }
 
 /*======Tags=====================================*/
-html, body {
-  background: url("bg.png") no-repeat center center fixed;
-  background-size: cover;
-}
-
 a{
-	text-decoration: none;
-	color: #444;
-	font-size: 19px;
-	font-family: fonty;
-	transition: .2s;
+  text-decoration: none;
+  color: #444;
+  font-size: 19px;
+  font-family: fonty;
+  transition: .2s;
 }
 a:hover{
-	color: #219c7b;
-	text-decoration: underline;
+  color: #219c7b;
+  text-decoration: underline;
 }
 p{
-	padding: .5em;
-	font-size: 20px;
-	color: #222;
-	font-family: fonty;
+  padding: .5em;
+  font-size: 20px;
+  color: #222;
+  font-family: fonty;
 }
 p1{
-	font-size: 20px;
-	color: #555;
-	font-family: fonty;
+  font-size: 20px;
+  color: #555;
+  font-family: fonty;
 }
 img{
-	padding: .7em;
+  padding: .7em;
 }
+
+/*======Title Video====================================*/
+.site-title-video {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;          /* controls how small it is */
+  max-width: 80%;
+  z-index: 10000;        /* above background + menus */
+  pointer-events: none;  /* behaves like a title */
+}
+.site-title-video video{
+  width: 100%;
+  height: auto;
+}
+
+/*======Confetti====================================*/
+.confetti-container,
+.confetti {
+  pointer-events: none; /* never block hover/click */
+}
+
+.confetti {
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  user-select: none;
+  animation-name: confetti-fall, confetti-shake, confetti-color;
+  animation-duration: 10s, 3s, 4s;
+  animation-timing-function: linear, ease-in-out, linear;
+  animation-iteration-count: infinite, infinite, infinite;
+}
+
+@keyframes confetti-fall {
+  0% { top: -10%; }
+  100% { top: 100%; }
+}
+
+@keyframes confetti-shake {
+  0%,100% { transform: translateX(0); }
+  50% { transform: translateX(80px); }
+}
+
+@keyframes confetti-color {
+  0%   { color: red; }
+  16%  { color: orange; }
+  33%  { color: yellow; }
+  50%  { color: lime; }
+  66%  { color: cyan; }
+  83%  { color: violet; }
+  100% { color: red; }
+}
+
+.confetti:nth-of-type(1){left:5%;animation-delay:0s,0s,0s}
+.confetti:nth-of-type(2){left:15%;animation-delay:1s,1s,.5s}
+.confetti:nth-of-type(3){left:25%;animation-delay:3s,2s,1s}
+.confetti:nth-of-type(4){left:35%;animation-delay:2s,1s,1.5s}
+.confetti:nth-of-type(5){left:45%;animation-delay:4s,3s,2s}
+.confetti:nth-of-type(6){left:55%;animation-delay:1s,2s,.2s}
+.confetti:nth-of-type(7){left:65%;animation-delay:5s,2s,1.8s}
+.confetti:nth-of-type(8){left:75%;animation-delay:2s,1s,.7s}
+.confetti:nth-of-type(9){left:85%;animation-delay:3s,2s,1.3s}
+.confetti:nth-of-type(10){left:95%;animation-delay:6s,3s,2.2s}
 
 /*======Buttons====================================*/
 .buttons{
-	position: relative;
-	text-align: center;
-	bottom: 0;
-	width: auto;
+  position: relative;
+  text-align: center;
+  bottom: 0;
+  width: auto;
+  z-index: 10001; /* keep above page BG, video frame, etc. */
 }
+
 button{
-	float: left;
-	text-align: center;
-	font-size: 12px;	
-	border: none;
-	color: #444;
-	width: 2%;
-	background: #dcdcdc;
-	outline: 0;
+  float: left;
+  text-align: center;
+  font-size: 12px; 
+  border: none;
+  color: #444;
+  width: 2%;
+  background: #dcdcdc;
+  outline: 0;
 }
 button:hover{
-	background: #c8c8c8;
-	cursor: pointer;
+  background: #c8c8c8;
+  cursor: pointer;
 }
 button:active{
-	background: #b8b8b8;
+  background: #b8b8b8;
 }
 
 /*======Main UI========================================*/
 .holder{
-	z-index: 2;
-	position: absolute;
-	height: 55%;
-	width: 8%;
-	background: #e1e1e1;
-	top: 17.5%;
-	margin-left: 20%;
+  z-index: 2;
+  position: absolute;
+  height: 55%;
+  width: 8%;
+  background: #e1e1e1;
+  top: 17.5%;
+  margin-left: 20%;
 }
 
 .bar-1, .bar-2, .bar-3, .bar-4, .bar-5, .bar-6{
-	display: flex;
-	position: absolute;
-	height: 8%;
-	width: 25%;
-	margin-left: 18%;
-	z-index: 3;
-	background: #ededed;
-	box-shadow: 0px 5px 12px rgba(0,0,0,0.18);
-	align-items: center;
-	transition: 0.25s ease-in-out;
-	border-left: 4px solid #cfcfcf;
+  display: flex;
+  position: absolute;
+  height: 8%;
+  width: 25%;
+  margin-left: 18%;
+  z-index: 3;
+  background: #ededed;
+  box-shadow: 0px 5px 12px rgba(0,0,0,0.18);
+  align-items: center;
+  transition: 0.25s ease-in-out;
+  border-left: 4px solid #cfcfcf;
 }
+
 .bar-1:hover, .bar-2:hover, .bar-3:hover, .bar-4:hover, .bar-5:hover{
-	width: 60%;
-	border-left: solid 4px #219c7b;
-	border-right: solid 4px #aaa;
+  width: 60%;
+  border-left: solid 4px #219c7b;
+  border-right: solid 4px #aaa;
 }
 
 .menu-1, .menu-2, .menu-3, .menu-4, .menu-5{
-	overflow: hidden;
-	display: flex;
-	visibility: hidden;
-	opacity: 0;
-	transition: .3s;
+  overflow: hidden;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
 }
 
 .bar-1{ top: 20.5%; }
@@ -112,8 +217,8 @@ button:active{
 .bar-3:hover .menu-3,
 .bar-4:hover .menu-4,
 .bar-5:hover .menu-5{
-	visibility: visible;
-	opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 /*==P Tags==*/
@@ -121,52 +226,68 @@ button:active{
 .bar-2:hover p,
 .bar-3:hover p,
 .bar-4:hover p,
-	bar-5:hover p{
-	text-decoration: underline;
+.bar-5:hover p{
+  text-decoration: underline;
 }
 
 /*=====Search Bar===============================================*/
 .search{
-    position:absolute;
-	margin: 0;
-	width: 55%;
-	height: auto;
-    top:85%;
-	margin-left: 22.5%;
-	margin-right: 22.5%;
-	z-index: 7;
-}
-input {
-    width: 100%;
-	text-align: center;
-    font-size: 18px;
-	color: #222;
-    padding: 12px 20px 12px 40px;
-    transition: .2s;
-	background: #f0f0f0;
-	border: none;
-    font-family: fonty;
-	box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
-}
-input:focus{
-    outline-width: 0;
-	box-shadow: 0px 0px 8px rgba(0,0,0,0.35);
-    font-size: 20px;
+  position: absolute;
+  margin: 0;
+  width: 55%;
+  height: auto;
+  top: 85%;
+  margin-left: 22.5%;
+  margin-right: 22.5%;
+  z-index: 7;
 }
 
-/*======Misc====================================================*/
-.back-img{
-	margin-left: 15%;
-	top: 10%;
-	position: absolute;
-	z-index: 1;
-	background-size: cover;
-	height: 70%;
-	width: 70%;
-	border: 4px solid #cfcfcf;
-	transition: .2s;
+input {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: #222;
+  padding: 12px 20px 12px 40px;
+  transition: .2s;
+  background: #f0f0f0;
+  border: none;
+  font-family: fonty;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
 }
+
+input:focus{
+  outline-width: 0;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.35);
+  font-size: 20px;
+}
+
+/*======Background video frame (.back-img)========================
+  This is your existing framed video area; keep it above the page BG.
+*/
+.back-img{
+  margin-left: 15%;
+  top: 10%;
+  position: absolute;
+  z-index: 1;
+  background: none !important;
+  background-size: cover;
+  height: 70%;
+  width: 70%;
+  border: 4px solid #cfcfcf;
+  transition: .2s;
+  overflow: hidden;
+}
+
+.back-img video.bgvid{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* never block hover/click */
+}
+
 .rotate{
-	filter: invert(0%);
-	transform: rotate(45deg);
+  filter: invert(0%);
+  transform: rotate(45deg);
 }
