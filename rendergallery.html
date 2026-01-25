@@ -1,75 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Link to your external stylesheet -->
-  <link rel="stylesheet" href="style2.css">
-</head>
+  <!-- Font (matches your original intent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
-<body>
+  <!-- Magnific Popup CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
 
-<header>
-  <h1>Photo Gallery</h1>
-</header>
+  <style>
+    html{
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-<ul class="gallery">
-  <li>
-    <a href="#">
-      <figure>
-        <img src="https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Volcano and lava field against a stormy sky">
-        <figcaption>Mountains and volcanos</figcaption>
-      </figure>
-    </a>
-  </li>
+    body{
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+    }
 
-  <li>
-    <a href="#">
-      <figure>
-        <img src="https://images.unsplash.com/photo-1633621533308-8760aefb5521?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Guy on a bike on a wooden bridge with a forest backdrop">
-        <figcaption>Adventure getaways</figcaption>
-      </figure>
-    </a>
-  </li>
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
 
-  <li>
-    <a href="#">
-      <figure>
-        <img src="https://images.unsplash.com/photo-1633635146842-12d386e64058?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Person standing alone in a misty forest">
-        <figcaption>Forest escapes</figcaption>
-      </figure>
-    </a>
-  </li>
+    /* Gallery columns */
+    .gallery{
+      column-gap: 0;
+      padding: 0;
+      margin: 0;
+    }
+    @media (min-width: 480px){
+      .gallery{ column-count: 2; }
+    }
+    @media (min-width: 1260px){
+      .gallery{ column-count: 3; }
+    }
 
-  <li>
-    <a href="#">
-      <figure>
-        <img src="https://images.unsplash.com/photo-1568444438385-ece31a33ce78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Person hiking in the mountains taking a photo">
-        <figcaption>Hiking trails</figcaption>
-      </figure>
-    </a>
-  </li>
+    .gallery-link{
+      display: inline-block;
+      width: 100%;
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+    }
 
-  <li>
-    <a href="#">
-      <figure>
-        <img src="https://images.unsplash.com/photo-1633515257379-5fda985bd57a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Street scene with masked pedestrians and motorbikes">
-        <figcaption>Street scenes</figcaption>
-      </figure>
-    </a>
-  </li>
+    .gallery-image{
+      position: relative;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
 
-  <li>
-    <a href="#">
-      <figure>
-        <img src="https://images.unsplash.com/photo-1633209931146-260ce0d16e22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Fashionable girl with pink sunglasses">
-        <figcaption>Trending</figcaption>
-      </figure>
-    </a>
-  </li>
-</ul>
+    .gallery-image::before,
+    .gallery-image::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 16px solid rgba(0,0,0,.1);
+      transition: all .2s;
+      will-change: border;
+      pointer-events: none;
+    }
 
-</body>
-</html>
+    .gallery-image::after{
+      border-width: 0;
+    }
+
+    .gallery-image img{
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Caption base (your %gallery-image-caption) */
+    .gallery-image figcaption{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      font-size: 14px;
+      color: rgba(255,255,255,0);
+      padding: 1em;
+      transition: all .2s ease;
+      font-weight: 600;
+      max-width: calc(100% - 9em);
+      line-height: 1.25;
+      text-align: center;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+    .gallery-image figcaption::before,
+    .gallery-image figcaption::after{
+      content: '';
+      position: absolute;
+      background: rgba(0,0,0,.2);
+      width: 100%;
+      height: 100%;
+      padding: 1em;
+      transition: all .3s ease-in-out;
+      opacity: 0;
+      z-index: -1;
+      right: 100%;
+      bottom: 100%;
+    }
+
+    .gallery-image figcaption::after{
+      left: 100%;
+      top: 100%;
+      right: auto;
+      bottom: auto;
+    }
+
+    /* Hover state (your %gallery-image-caption-visible + hover rules) */
+    html:not(.touch) .gallery-image:hover::before{
+      border-width: 16px;
+    }
+    html:not(.touch) .gallery-image:hover::after{
+      border-width: 32px;
+    }
+
+    html:not(.touch) .gallery-image:hover figcaption{
+      color: rgba(255,255,255,1);
+      text-shadow: 0 0 1px rgba(0,0,0,.2);
+      transition: all .2s e
