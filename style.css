@@ -1,7 +1,7 @@
 /*======Fonts====================================*/
 @font-face {
     font-family: fonty;
-    src: url(Advercase.otf);
+    src: url(AdvercaseFont-Demo-Regular.otf);
 }
 
 /*======Tags=====================================*/
@@ -12,7 +12,7 @@ html, body {
 
 a{
 	text-decoration: none;
-	color: #555;
+	color: #444;
 	font-size: 19px;
 	font-family: fonty;
 	transition: .2s;
@@ -29,7 +29,7 @@ p{
 }
 p1{
 	font-size: 20px;
-	color: #666;
+	color: #555;
 	font-family: fonty;
 }
 img{
@@ -50,15 +50,15 @@ button{
 	border: none;
 	color: #444;
 	width: 2%;
-	background: #f2f2f2;
+	background: #dcdcdc;
 	outline: 0;
 }
 button:hover{
-	background: #ddd;
+	background: #c8c8c8;
 	cursor: pointer;
 }
 button:active{
-	background: #ccc;
+	background: #b8b8b8;
 }
 
 /*======Main UI========================================*/
@@ -67,7 +67,7 @@ button:active{
 	position: absolute;
 	height: 55%;
 	width: 8%;
-	background: #f0f0f0;
+	background: #e1e1e1;
 	top: 17.5%;
 	margin-left: 20%;
 }
@@ -79,11 +79,11 @@ button:active{
 	width: 25%;
 	margin-left: 18%;
 	z-index: 3;
-	background: #ffffff;
-	box-shadow: 0px 5px 12px rgba(0,0,0,0.15);
+	background: #ededed;
+	box-shadow: 0px 5px 12px rgba(0,0,0,0.18);
 	align-items: center;
 	transition: 0.25s ease-in-out;
-	border-left: 4px solid #ddd;
+	border-left: 4px solid #cfcfcf;
 }
 .bar-1:hover, .bar-2:hover, .bar-3:hover, .bar-4:hover, .bar-5:hover{
 	width: 60%;
@@ -121,7 +121,7 @@ button:active{
 .bar-2:hover p,
 .bar-3:hover p,
 .bar-4:hover p,
-.bar-5:hover p{
+	bar-5:hover p{
 	text-decoration: underline;
 }
 
@@ -143,14 +143,14 @@ input {
 	color: #222;
     padding: 12px 20px 12px 40px;
     transition: .2s;
-	background: #ffffff;
+	background: #f0f0f0;
 	border: none;
     font-family: fonty;
-	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
 }
 input:focus{
     outline-width: 0;
-	box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.35);
     font-size: 20px;
 }
 
@@ -163,7 +163,7 @@ input:focus{
 	background-size: cover;
 	height: 70%;
 	width: 70%;
-	border: 4px solid #ddd;
+	border: 4px solid #cfcfcf;
 	transition: .2s;
 }
 .rotate{
