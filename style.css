@@ -13,9 +13,15 @@
     src: url(Advercase.otf);
 }
 /*======Tags=====================================*/
+
 body{
 	background: #121212;
 }
+html, body {
+  background: url("bg.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
 a{
 	text-decoration: none;
 	color: darkgrey;
