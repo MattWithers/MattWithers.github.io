@@ -21,7 +21,7 @@ let object;
 let controls;
 
 //Set which object to render
-let objToRender = 'plasticbag';
+let objToRender = 'dino';
 
 //Instantiate a loader for the .gltf file
 const loader = new GLTFLoader();
@@ -64,7 +64,7 @@ const ambientLight = new THREE.AmbientLight(0x333333, objToRender === "dino" ? 5
 scene.add(ambientLight);
 
 //This adds controls to the camera, so we can rotate / zoom it with the mouse
-if (objToRender === "plasticbag") {
+if (objToRender === "dino") {
   controls = new OrbitControls(camera, renderer.domElement);
 }
 
