@@ -64,7 +64,7 @@ const ambientLight = new THREE.AmbientLight(0x333333, objToRender === "dino" ? 5
 scene.add(ambientLight);
 
 //This adds controls to the camera, so we can rotate / zoom it with the mouse
-if (objToRender === "dino") {
+if (objToRender === "plasticbag") {
   controls = new OrbitControls(camera, renderer.domElement);
 }
 
