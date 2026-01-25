@@ -24,14 +24,25 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  pointer-events: none; /* never block hover/click */
+  pointer-events: none;
 }
 
-
-
-
+/* ===== Title Video ===== */
+.site-title-video {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  max-width: 80%;
+  z-index: 10000;
+  pointer-events: none;
+}
+.site-title-video video {
+  width: 100%;
+  height: auto;
+}
 </style>
-
 
 <style>
 .confetti {
@@ -78,6 +89,16 @@ html, body {
 .confetti:nth-of-type(9){left:85%;animation-delay:3s,2s,1.3s}
 .confetti:nth-of-type(10){left:95%;animation-delay:6s,3s,2.2s}
 </style>
+</head>
+
+<body>
+
+<!-- ===== Animated Title ===== -->
+<div class="site-title-video">
+  <video autoplay loop muted playsinline>
+    <source src="TransformNameToWelcome-negate.mp4" type="video/mp4">
+  </video>
+</div>
 
 <div class="confetti-container" aria-hidden="true">
   <div class="confetti">●</div>
@@ -92,130 +113,52 @@ html, body {
   <div class="confetti">★</div>
 </div>
 
+<div class="search">
+  <form action="javascript:search()">
+    <input id="search" placeholder="Search..." spellcheck="false" autocomplete="off" autofocus/>
+  </form>
+</div>	
 
+<div class="buttons">
+  <button type="button" onmouseover="fishy()">1</button>
+  <button type="button" onmouseover="peng()">2</button>
+  <button type="button" onmouseover="foot()">#</button>
+</div>
 
-</head>
-	<body>
-		<div class="search">
-			<form action="javascript:search()">
-				<input id="search" value="" placeholder="Search..." type="input" spellcheck="false" autocomplete="off" autofocus/>
-			</form>
-		</div>	
-		<div class="buttons">
-			<button type="button" onmouseover="fishy()">1</button>
-			<button type="button" onmouseover="peng()">2</button>
-			<button type="button" onmouseover="foot()">#</button>
-		</div>
-		
-		<div class="back-img" id="back-img"><video id="bgvid" class="bgvid" autoplay muted loop playsinline><source src="TrainRide.webm" type="video/webm"></video></div>
-		<div class="holder">
-		</div>
-		<!--==========Bars==========-->
-		<div class="bar-1">
-			<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEyOHB4IiBoZWlnaHQ9IjEyOHB4IiB2aWV3Qm94PSIwIDAgNTEwIDUxMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEwIDUxMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnIGlkPSJmYXZvcml0ZSI+CgkJPHBhdGggZD0iTTI1NSw0ODkuNmwtMzUuNy0zNS43Qzg2LjcsMzM2LjYsMCwyNTcuNTUsMCwxNjAuNjVDMCw4MS42LDYxLjIsMjAuNCwxNDAuMjUsMjAuNGM0My4zNSwwLDg2LjcsMjAuNCwxMTQuNzUsNTMuNTUgICAgQzI4My4wNSw0MC44LDMyNi40LDIwLjQsMzY5Ljc1LDIwLjRDNDQ4LjgsMjAuNCw1MTAsODEuNiw1MTAsMTYwLjY1YzAsOTYuOS04Ni43LDE3NS45NS0yMTkuMywyOTMuMjVMMjU1LDQ4OS42eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" height="40%"/>
-			<p>General</p>&nbsp;&nbsp;&nbsp;
-			<div class="menu-1">
-				<a href="http://www.zamzar.com">										Zamzar</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.mediafire.com/myfiles">								Media&nbsp;Fire</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://www.dropbox.com">										Dropbox</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://video.online-convert.com/convert-to-webm">				Webm</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.thepiratebay.org">									The&nbsp;PirateBay</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://www.torrentz2.eu">										Torrentz</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://goo.gl/">												Google&nbsp;url</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.vtmp3.cc">											yt&nbsp;-&nbsp;mp3</a>	&nbsp;&nbsp;
-				<a href="#">PNC</a>
-			</div>
-		</div>
-		<div class="bar-2">
-			<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUyNS4xNTIgNTI1LjE1MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTI1LjE1MiA1MjUuMTUyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjEyOHB4IiBoZWlnaHQ9IjEyOHB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDIwLjczNSwzNzEuMjE3Yy0yMC4wMjEsMC0zNy45NDIsNy44NTUtNTEuNTk2LDIwLjI0TDE4MS4xMTIsMjgyLjA5NGMxLjM1Ny02LjA2MSwyLjQwNy0xMi4xNjYsMi40MDctMTguNDY4ICAgYzAtNi4zMDItMS4wNzItMTIuMzg1LTIuNDA3LTE4LjQ2OGwxODUuOTA0LTEwOC4zMzVjMTQuMTc5LDEzLjEyOSwzMi45MzEsMjEuMzM0LDUzLjcxOSwyMS4zMzQgICBjNDMuODI4LDAsNzkuMTQ1LTM1LjI1MSw3OS4xNDUtNzkuMDc5QzQ5OS44OCwzNS4zMzgsNDY0LjU0MSwwLDQyMC43MzUsMGMtNDMuNzQxLDAtNzkuMDc5LDM1LjMzOC03OS4wNzksNzkuMDU3ICAgYzAsNi4zODksMS4wNzIsMTIuMzg1LDIuNDA3LDE4LjQ2OEwxNTguMTU4LDIwNS45NDdjLTE0LjIwMS0xMy4xOTQtMzIuOTMxLTIxLjM3OC01My43NDEtMjEuMzc4ICAgYy00My44MjgsMC03OS4xNDUsMzUuMzE3LTc5LjE0NSw3OS4wNTdzMzUuMzE3LDc5LjA3OSw3OS4xNDUsNzkuMDc5YzIwLjc4NywwLDM5LjU0LTguMjA2LDUzLjcxOS0yMS4zMzRsMTg3LjY5OCwxMDkuNjA0ICAgYy0xLjI5MSw1LjU4LTIuMTAxLDExLjQtMi4xMDEsMTcuMTk5YzAsNDIuNDUsMzQuNTk0LDc2Ljk3OSw3Ni45NzksNzYuOTc5YzQyLjQyOCwwLDc3LjA0NC0zNC41MDcsNzcuMDQ0LTc2Ljk3OSAgIFM0NjMuMTYzLDM3MS4yMTcsNDIwLjczNSwzNzEuMjE3eiIgZmlsbD0iI0ZGRkZGRiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" height="40%"/>
-			<p>Social</p>&nbsp;&nbsp;&nbsp;
-			<div class="menu-2">
-				<a href="https://www.youtube.com">																	YouTube</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://www.amazon.com">																	Amazon</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://www.tumblr.com">																	Tumblr</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www/netflix.xom">																	Netflix</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://www.youtube.com/watch?v=hX3j0sQ7ot8&index=6&list=LL387wBiVf796VXvamnDyMOA">		Chill&nbsp;Music</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.g2a.com">																		G2A</a> &nbsp;&nbsp;
-				<a href="#"></a> &nbsp;&nbsp;
-				<a href="#"></a> &nbsp;&nbsp;
-				<a href="#"></a>
-			</div>
-		</div>
-		<div class="bar-3">
-			<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEyOHB4IiBoZWlnaHQ9IjEyOHB4IiB2aWV3Qm94PSIwIDAgOTQuNTA0IDk0LjUwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgOTQuNTA0IDk0LjUwNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik05My45MTgsNDUuODMzTDY5Ljc5OSwyMS43MTRjLTAuNzUtMC43NS0yLjA3Ny0wLjc1LTIuODI3LDBsLTUuMjI5LDUuMjI5Yy0wLjc4MSwwLjc4MS0wLjc4MSwyLjA0NywwLDIuODI4ICAgIGwxNy40NzcsMTcuNDc1TDYxLjc0NCw2NC43MjRjLTAuNzgxLDAuNzgxLTAuNzgxLDIuMDQ3LDAsMi44MjhsNS4yMjksNS4yMjljMC4zNzUsMC4zNzUsMC44ODQsMC41ODcsMS40MTQsMC41ODcgICAgYzAuNTI5LDAsMS4wMzktMC4yMTIsMS40MTQtMC41ODdsMjQuMTE3LTI0LjExOEM5NC42OTksNDcuODgxLDk0LjY5OSw0Ni42MTQsOTMuOTE4LDQ1LjgzM3oiIGZpbGw9IiNGRkZGRkYiLz4KCQk8cGF0aCBkPSJNMzIuNzU5LDY0LjcyNEwxNS4yODUsNDcuMjQ4bDE3LjQ3Ny0xNy40NzVjMC4zNzUtMC4zNzUsMC41ODYtMC44ODMsMC41ODYtMS40MTRjMC0wLjUzLTAuMjEtMS4wMzktMC41ODYtMS40MTQgICAgbC01LjIyOS01LjIyOWMtMC4zNzUtMC4zNzUtMC44ODQtMC41ODYtMS40MTQtMC41ODZjLTAuNTMsMC0xLjAzOSwwLjIxMS0xLjQxNCwwLjU4NkwwLjU4NSw0NS44MzMgICAgYy0wLjc4MSwwLjc4MS0wLjc4MSwyLjA0NywwLDIuODI5TDI0LjcwNCw3Mi43OGMwLjM3NSwwLjM3NSwwLjg4NCwwLjU4NywxLjQxNCwwLjU4N2MwLjUzLDAsMS4wMzktMC4yMTIsMS40MTQtMC41ODdsNS4yMjktNS4yMjkgICAgQzMzLjU0Miw2Ni43NzEsMzMuNTQyLDY1LjUwNSwzMi43NTksNjQuNzI0eiIgZmlsbD0iI0ZGRkZGRiIvPgoJCTxwYXRoIGQ9Ik02MC45NjcsMTMuNmMtMC4yNTQtMC40NjYtMC42ODItMC44MTItMS4xOS0wLjk2MmwtNC4yMzktMS4yNTFjLTEuMDU4LTAuMzE0LTIuMTcyLDAuMjkzLTIuNDg0LDEuMzUyTDMzLjM3NSw3OS4zODIgICAgYy0wLjE1LDAuNTA5LTAuMDkyLDEuMDU2LDAuMTYxLDEuNTIxYzAuMjUzLDAuNDY3LDAuNjgyLDAuODEyLDEuMTksMC45NjNsNC4yMzksMS4yNTFjMC4xODksMC4wNTYsMC4zOCwwLjA4MywwLjU2NywwLjA4MyAgICBjMC44NjMsMCwxLjY2LTAuNTY0LDEuOTE3LTEuNDM1bDE5LjY3OS02Ni42NDRDNjEuMjc4LDE0LjYxMiw2MS4yMjEsMTQuMDY1LDYwLjk2NywxMy42eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" height="40%"/>
-			<p>Code</p>&nbsp;&nbsp;&nbsp;
-			<div class="menu-3">
-				<a href="https://www.codecademy.com/learn">											Code&nbsp;Academy</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://www.w3schools.com/html/default.asp">								html</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://www.w3schools.com/css/default.asp">								css</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://www.w3schools.com/js/default.asp">									js</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://html-color-codes.info/colors-from-image/">							colors</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://www.flaticon.com/search?word=music">								Flaticon</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="#">																		SVGs</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://seytonic.com/ducky/">												Duckyscript</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://stackoverflow.com/">												Stack&nbsp;Overflow</a>
-			</div>
-		</div>
-		<div class="bar-4">
-			<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTI4cHgiIGhlaWdodD0iMTI4cHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNOTcuMzQ0LDQ4Mi4xN2MtMjMuMzExLDAtNDUuMjE1LTkuMDg0LTYxLjY4OS0yNS41NTVjLTM0LjAxLTM0LjAxNC0zNC4wMS04OS4zNjEsMC0xMjMuMzcxTDMwNS4zNDMsNjMuNTQzICAgYzIxLjcyNy0yMS43NSw1MC42NDUtMzMuNzEzLDgxLjM5LTMzLjcxM2MzMC43NSwwLDU5LjY2NywxMS45NjMsODEuMzk1LDMzLjcxM2MyMS43NDgsMjEuNzQ0LDMzLjcyNiw1MC42NDUsMzMuNzI2LDgxLjM4OSAgIGMwLDMwLjc1LTExLjk2NCw1OS42NS0zMy43MDgsODEuMzgxTDI1NS44NDMsNDM4LjU5NmMtNi4zNzQsNi4zNzEtMTYuNjk2LDYuMzcxLTIzLjA2NywwYy02LjM3NC02LjM3My02LjM3NC0xNi42OTUsMC0yMy4wNyAgIGwyMTIuMjk4LTIxMi4yODNjMTUuNTgzLTE1LjU4LDI0LjE1My0zNi4yOTEsMjQuMTUzLTU4LjMxMWMwLTIyLjAxNi04LjU4OC00Mi43NC0yNC4xNjctNTguMzIyICAgYy0xNS41ODMtMTUuNTgtMzYuMjk0LTI0LjE1NC01OC4zMjctMjQuMTU0Yy0yMi4wMjksMC00Mi43NCw4LjU3NC01OC4zMjMsMjQuMTU0TDU4LjcyNSwzNTYuMzExICAgYy0yMS4yODMsMjEuMzAxLTIxLjI4Myw1NS45MzgsMCw3Ny4yMzRjMjAuNjQ1LDIwLjYxNyw1Ni41ODksMjAuNjE3LDc3LjIzMywwbDE4MS4wOTEtMTgxLjEwNSAgIGM0LjkyNC00LjkyNCw3Ljc0NS0xMS43NCw3Ljc0NS0xOC42ODhjMC03LjA0NS0yLjc1NS0xMy42ODYtNy43NTktMTguNjg5Yy0xMC4yOTEtMTAuMjkxLTI3LjA2Ny0xMC4zMjItMzcuMzU4LDBMMTU2LDMzOC43NTQgICBjLTYuMzcsNi4zNzUtMTYuNjk3LDYuMzc1LTIzLjA2NywwYy02LjM3NC02LjM3MS02LjM3NC0xNi42OTcsMC0yMy4wNjZsMTIzLjY3My0xMjMuNjkxYzIzLjAwNS0yMy4wMDQsNjAuNDYxLTIzLjAwNCw4My40OTcsMCAgIGMxMS4xNjksMTEuMTY2LDE3LjMxNywyNiwxNy4zMTcsNDEuNzU2YzAsMTUuNTQ3LTYuMzA4LDMwLjc2Mi0xNy4zLDQxLjc1NEwxNTkuMDI5LDQ1Ni42MTUgICBDMTQyLjU1NSw0NzMuMDg2LDEyMC42NSw0ODIuMTcsOTcuMzQ0LDQ4Mi4xN3oiIGZpbGw9IiNGRkZGRkYiLz4KPC9nPgo8L3N2Zz4K" height="40%"/>
-			<p>School</p>&nbsp;&nbsp;&nbsp;
-			<div class="menu-4">
-				<a href="http://www.stxavier.instructure.com">		Canvas</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.stxavier.org">					St.&nbsp;Xavier</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://www.office.com/?auth=2">			Office&nbsp;365</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://www.gmail.com">						Gmail</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://outlook.office.com/owa/">			Outlook</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="https://www.thingiverse.com/">				Thingiverse</a> &nbsp;&nbsp;
-				<a href="#"></a> &nbsp;&nbsp;
-				<a href="#"></a> &nbsp;&nbsp;
-				<a href="#"></a>
-			</div>
-		</div>
-		<div class="bar-5">
-		<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4IiB2aWV3Qm94PSIwIDAgMjkuODk0IDI5Ljg5NSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjkuODk0IDI5Ljg5NTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnPgoJCTxnIGlkPSJJY29uc183XyI+CgkJCTxnPgoJCQkJPHBhdGggZD0iTTE0LjMwOCwxMy4wNDhjMC4zNTUsMC4zNSwwLjkyNCwwLjM1LDEuMjgsMGMxLjIyLTEuMjAzLDMuODEzLTMuODAzLDQuNDUxLTQuNzkyYzAuOTA4LTEuNDA2LDEuODEyLTIuNTY2LDEuODEyLTQuNTkxICAgICAgUzIwLjIxMSwwLDE4LjE4NiwwYy0xLjQxNiwwLTIuNjMsMC44MTItMy4yNCwxLjk4N0MxNC4zMzYsMC44MTIsMTMuMTIzLDAsMTEuNzA3LDBDOS42ODIsMCw4LjA0MiwxLjY0LDguMDQyLDMuNjY1ICAgICAgUzguOTQ3LDYuODUsOS44NTQsOC4yNTZDMTAuNDk1LDkuMjQ0LDEzLjA4OCwxMS44NDUsMTQuMzA4LDEzLjA0OHoiIGZpbGw9IiMwMDAwMDAiLz4KCQkJCTxwYXRoIGQ9Ik0xNS41ODcsMTYuODQ4Yy0wLjM1NS0wLjM1MS0wLjkyNS0wLjM1MS0xLjI4LDBjLTEuMjIsMS4yMDItMy44MTMsMy44MDQtNC40NTIsNC43OTEgICAgICBjLTAuOTA3LDEuNDA2LTEuODEzLDIuNTY2LTEuODEzLDQuNTkzYzAsMi4wMjMsMS42NCwzLjY2MywzLjY2NSwzLjY2M2MxLjQxNiwwLDIuNjMtMC44MTIsMy4yNC0xLjk4NSAgICAgIGMwLjYxMSwxLjE3NSwxLjgyNCwxLjk4NSwzLjI0LDEuOTg1YzIuMDI0LDAsMy42NjUtMS42NCwzLjY2NS0zLjY2M2MwLTIuMDI1LTAuOTA0LTMuMTg3LTEuODEyLTQuNTkzICAgICAgQzE5LjQwMiwyMC42NSwxNi44MDcsMTguMDQ5LDE1LjU4NywxNi44NDh6IiBmaWxsPSIjMDAwMDAwIi8+CgkJCQk8cGF0aCBkPSJNMjcuOTA4LDE0Ljk0N2MxLjE3NC0wLjYxLDEuOTg1LTEuODI0LDEuOTg1LTMuMjRjMC0yLjAyNS0xLjY0LTMuNjY1LTMuNjY0LTMuNjY2Yy0yLjAyNCwwLTMuMTg2LDAuOTA2LTQuNTkyLDEuODEzICAgICAgYy0wLjk4NywwLjYzOS0zLjU5LDMuMjMyLTQuNzkyLDQuNDUyYy0wLjM1MSwwLjM1NS0wLjM1MSwwLjkyNCwwLDEuMjc5YzEuMjAyLDEuMjIsMy44MDUsMy44MTMsNC43OTIsNC40NTMgICAgICBjMS40MDYsMC45MDcsMi41NjYsMS44MTIsNC41OTIsMS44MTJjMi4wMjMsMCwzLjY2NC0xLjY0MiwzLjY2NC0zLjY2NkMyOS44OTYsMTYuNzcxLDI5LjA4MywxNS41NTcsMjcuOTA4LDE0Ljk0N3oiIGZpbGw9IiMwMDAwMDAiLz4KCQkJCTxwYXRoIGQ9Ik0xMy4wNDgsMTUuNTg3YzAuMzUtMC4zNTQsMC4zNS0wLjkyNSwwLTEuMjhjLTEuMjAzLTEuMjItMy44MDQtMy44MTMtNC43OTItNC40NTJDNi44NTEsOC45NDgsNS42OSw4LjA0MiwzLjY2Nyw4LjA0MiAgICAgIGMtMi4wMjUsMC0zLjY2NSwxLjY0MS0zLjY2NSwzLjY2NmMwLDEuNDE2LDAuODEzLDIuNjMsMS45ODcsMy4yNGMtMS4xNzUsMC42MS0xLjk4NywxLjgyMy0xLjk4NywzLjIzOSAgICAgIGMwLDIuMDIzLDEuNjQsMy42NjMsMy42NjUsMy42NjVjMi4wMjQsMCwzLjE4NS0wLjkwNSw0LjU5LTEuODEyQzkuMjQ1LDE5LjQsMTEuODQ1LDE2LjgwNywxMy4wNDgsMTUuNTg3eiIgZmlsbD0iIzAwMDAwMCIvPgoJCQk8L2c+CgkJPC9nPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" height="40%" class="rotate"/>
-		<p>4chan</p>&nbsp;&nbsp;&nbsp;
-			<div class="menu-5">
-				<a href="http://www.4chan.org/wg">				/wg/</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.4chan.org/gd">				/gd/</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.4chan.org/b">				/b/</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.4chan.org/pol">				/pol/</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.4chan.org/soc">				/soc/</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.4chan.org/gif">				/gif/</a><p1>,</p1> &nbsp;&nbsp;
-				<a href="http://www.4chan.org/r9k">				/r9k/</a> &nbsp;&nbsp;
-				<a href="#"></a> &nbsp;&nbsp;
-				<a href="#"></a>
-			</div>
-		</div>
-		<script>
-  function setVideo(src) {
-    const v = document.getElementById("bgvid");
-    if (!v) return;
+<div class="back-img" id="back-img">
+  <video id="bgvid" class="bgvid" autoplay muted loop playsinline>
+    <source src="TrainRide.webm" type="video/webm">
+  </video>
+</div>
 
-    let source = v.querySelector("source");
-    if (!source) {
-      source = document.createElement("source");
-      source.type = "video/webm";
-      v.appendChild(source);
-    }
+<script>
+function setVideo(src) {
+  const v = document.getElementById("bgvid");
+  if (!v) return;
 
-    if (source.getAttribute("src") !== src) {
-      source.setAttribute("src", src);
-      v.load();
-    }
-
-    // Autoplay policies: must be muted (already in markup)
-    v.play().catch(() => {});
+  let source = v.querySelector("source");
+  if (!source) {
+    source = document.createElement("source");
+    source.type = "video/webm";
+    v.appendChild(source);
   }
 
-  // All three buttons now show the same video (per your request)
-  function fishy() { setVideo("TrainRide.webm"); }
-  function peng()  { setVideo("TrainRide.webm"); }
-  function foot()  { setVideo("TrainRide.webm"); }
-
-  function search(){
-    var query = document.getElementById('search').value;
-    window.location = 'https://www.google.com/#q=' + query;
+  if (source.getAttribute("src") !== src) {
+    source.setAttribute("src", src);
+    v.load();
   }
+  v.play().catch(() => {});
+}
+
+function fishy() { setVideo("TrainRide.webm"); }
+function peng()  { setVideo("TrainRide.webm"); }
+function foot()  { setVideo("TrainRide.webm"); }
+
+function search(){
+  var query = document.getElementById('search').value;
+  window.location = 'https://www.google.com/#q=' + query;
+}
 </script>
-	</body>
+
+</body>
 </html>
