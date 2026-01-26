@@ -299,18 +299,6 @@ input:focus{
 }
 
 
-/* ===== Title (day/night) ===== */
-.site-title-video .title-night {
-  display: none;
-}
-body.bg-night .site-title-video .title-day {
-  display: none;
-}
-body.bg-night .site-title-video .title-night {
-  display: block;
-}
-
-
 /* ===== Night Mode Menu Theme ===== */
 /* Keep your day palette untouched; only override when .bg-night is active */
 body.bg-night .holder {
@@ -374,4 +362,99 @@ body.bg-night button:active {
 
 body.bg-night .rotate {
   filter: invert(100%);
+}
+
+
+/* ===== Title (day/night) ===== */
+.site-title-video .title-day {
+  display: block;
+}
+.site-title-video .title-night {
+  display: none;
+}
+body.bg-night .site-title-video .title-day {
+  display: none;
+}
+body.bg-night .site-title-video .title-night {
+  display: block;
+}
+
+
+/* ===== Star Parallax Layers (randomized) ===== */
+#stars, #stars2, #stars3 {
+  position: fixed;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+  z-index: 0; /* above page-bg (same z-index, later in DOM), below UI */
+}
+
+/* Stars only in night mode */
+body:not(.bg-night) #stars,
+body:not(.bg-night) #stars2,
+body:not(.bg-night) #stars3 {
+  opacity: 0;
+}
+
+body.bg-night #stars,
+body.bg-night #stars2,
+body.bg-night #stars3 {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: var(--shadows);
+  animation: animStar 50s linear infinite;
+}
+#stars::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: var(--shadows2);
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: var(--shadows);
+  animation: animStar 100s linear infinite;
+}
+#stars2::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: var(--shadows2);
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: var(--shadows);
+  animation: animStar 150s linear infinite;
+}
+#stars3::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: var(--shadows2);
+}
+
+@keyframes animStar {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-2000px); }
 }
