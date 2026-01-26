@@ -87,6 +87,12 @@ img{
   width: 100%;
   height: auto;
 }
+.site-title-video img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 /*======Confetti====================================*/
 .confetti-container,
@@ -293,85 +299,79 @@ input:focus{
 }
 
 
-/* ===== Star Parallax Layers (randomized) ===== */
-#stars, #stars2, #stars3 {
-  position: fixed;
-  inset: 0;
+/* ===== Title (day/night) ===== */
+.site-title-video .title-night {
+  display: none;
+}
+body.bg-night .site-title-video .title-day {
+  display: none;
+}
+body.bg-night .site-title-video .title-night {
   display: block;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 1;
 }
 
-/* Show stars only on night mode (when body has .bg-night) */
-body:not(.bg-night) #stars,
-body:not(.bg-night) #stars2,
-body:not(.bg-night) #stars3 {
-  opacity: 0;
+
+/* ===== Night Mode Menu Theme ===== */
+/* Keep your day palette untouched; only override when .bg-night is active */
+body.bg-night .holder {
+  background: rgba(15, 18, 24, 0.85);
 }
 
-body.bg-night #stars,
-body.bg-night #stars2,
-body.bg-night #stars3 {
-  opacity: 1;
-  transition: opacity 500ms linear;
+body.bg-night .bar-1,
+body.bg-night .bar-2,
+body.bg-night .bar-3,
+body.bg-night .bar-4,
+body.bg-night .bar-5,
+body.bg-night .bar-6 {
+  background: rgba(20, 24, 32, 0.88);
+  border-left-color: rgba(80, 90, 110, 0.65);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.55);
 }
 
-#stars {
-  width: 1px;
-  height: 1px;
-  background: transparent;
-  box-shadow: var(--shadows);
-  animation: animStar 50s linear infinite;
+body.bg-night .bar-1:hover,
+body.bg-night .bar-2:hover,
+body.bg-night .bar-3:hover,
+body.bg-night .bar-4:hover,
+body.bg-night .bar-5:hover {
+  border-left-color: #219c7b; /* preserve your accent */
+  border-right-color: rgba(160, 170, 190, 0.35);
 }
 
-#stars::after {
-  content: "";
-  position: absolute;
-  top: 2000px;
-  width: 1px;
-  height: 1px;
-  background: transparent;
-  box-shadow: var(--shadows2);
+body.bg-night p {
+  color: rgba(235, 238, 244, 0.92);
 }
 
-#stars2 {
-  width: 2px;
-  height: 2px;
-  background: transparent;
-  box-shadow: var(--shadows);
-  animation: animStar 100s linear infinite;
+body.bg-night p1 {
+  color: rgba(190, 198, 210, 0.85);
 }
 
-#stars2::after {
-  content: "";
-  position: absolute;
-  top: 2000px;
-  width: 2px;
-  height: 2px;
-  background: transparent;
-  box-shadow: var(--shadows2);
+body.bg-night a {
+  color: rgba(220, 226, 235, 0.90);
 }
 
-#stars3 {
-  width: 3px;
-  height: 3px;
-  background: transparent;
-  box-shadow: var(--shadows);
-  animation: animStar 150s linear infinite;
+body.bg-night a:hover {
+  color: #219c7b;
 }
 
-#stars3::after {
-  content: "";
-  position: absolute;
-  top: 2000px;
-  width: 3px;
-  height: 3px;
-  background: transparent;
-  box-shadow: var(--shadows2);
+body.bg-night input {
+  background: rgba(18, 22, 30, 0.85);
+  color: rgba(235, 238, 244, 0.92);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.55);
 }
 
-@keyframes animStar {
-  from { transform: translateY(0px); }
-  to   { transform: translateY(-2000px); }
+body.bg-night button {
+  background: rgba(30, 36, 48, 0.85);
+  color: rgba(235, 238, 244, 0.90);
+}
+
+body.bg-night button:hover {
+  background: rgba(40, 48, 64, 0.9);
+}
+
+body.bg-night button:active {
+  background: rgba(26, 32, 44, 0.9);
+}
+
+body.bg-night .rotate {
+  filter: invert(100%);
 }

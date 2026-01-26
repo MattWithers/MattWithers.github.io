@@ -17,11 +17,6 @@ Give Credit were it's due, The_Bugs
     <div class="page-bg page-bg--day" aria-hidden="true"></div>
     <div class="page-bg page-bg--night" aria-hidden="true"></div>
 
-    <!-- ===== Star Parallax Background ===== -->
-    <div id="stars" aria-hidden="true"></div>
-    <div id="stars2" aria-hidden="true"></div>
-    <div id="stars3" aria-hidden="true"></div>
-
     <!-- ===== Confetti ===== -->
     <div class="confetti-container" aria-hidden="true">
       <div class="confetti">●</div>
@@ -37,10 +32,9 @@ Give Credit were it's due, The_Bugs
     </div>
 
     <!-- ===== Animated Title ===== -->
-    <div class="site-title-video">
-      <video autoplay loop muted playsinline>
-        <source src="TransformNameToWelcome-negate.mp4" type="video/mp4" />
-      </video>
+    <div class="site-title-video" aria-hidden="true">
+      <img class="title-day" src="Title_Day_Gif.gif" alt="" />
+      <img class="title-night" src="Title_Night_Gif.gif" alt="" />
     </div>
 
     <div class="search">
@@ -177,37 +171,5 @@ Give Credit were it's due, The_Bugs
         window.location = "https://www.google.com/#q=" + query;
       }
     </script>
-  
-    <script>
-      /* ===== Starfield Generator (randomized) ===== */
-      (function () {
-        const MAX_X = 2000;
-        const MAX_Y = 2000;
-
-        function buildShadows(n) {
-          const parts = new Array(n);
-          for (let i = 0; i < n; i++) {
-            const x = Math.floor(Math.random() * MAX_X);
-            const y = Math.floor(Math.random() * MAX_Y);
-            parts[i] = `${x}px ${y}px #FFF`;
-          }
-          return parts.join(", ");
-        }
-
-        const layers = [
-          { id: "stars",  count: 700 },
-          { id: "stars2", count: 200 },
-          { id: "stars3", count: 100 },
-        ];
-
-        for (const layer of layers) {
-          const el = document.getElementById(layer.id);
-          if (!el) continue;
-          el.style.setProperty("--shadows", buildShadows(layer.count));
-          el.style.setProperty("--shadows2", buildShadows(layer.count)); // for ::after tiling
-        }
-      })();
-    </script>
-
   </body>
 </html>
