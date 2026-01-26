@@ -365,21 +365,6 @@ body.bg-night .rotate {
 }
 
 
-/* ===== Title (day/night) ===== */
-.site-title-video .title-day {
-  display: block;
-}
-.site-title-video .title-night {
-  display: none;
-}
-body.bg-night .site-title-video .title-day {
-  display: none;
-}
-body.bg-night .site-title-video .title-night {
-  display: block;
-}
-
-
 /* ===== Star Parallax Layers (randomized) ===== */
 #stars, #stars2, #stars3 {
   position: fixed;
@@ -457,4 +442,36 @@ body.bg-night #stars3 {
 @keyframes animStar {
   from { transform: translateY(0px); }
   to   { transform: translateY(-2000px); }
+}
+
+
+/* ===== Title (day/night) =====
+   Crossfade between the two GIFs based on body.bg-night.
+   Both images occupy the exact same space. */
+.site-title-video{
+  display: grid;          /* allow stacking without removing intrinsic sizing */
+}
+.site-title-video img{
+  grid-area: 1 / 1;       /* stack both in the same cell */
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transition: opacity 650ms linear;
+}
+
+/* Default = day */
+.site-title-video .title-day{
+  opacity: 1;
+}
+.site-title-video .title-night{
+  opacity: 0;
+}
+
+/* Night mode */
+body.bg-night .site-title-video .title-day{
+  opacity: 0;
+}
+body.bg-night .site-title-video .title-night{
+  opacity: 1;
 }
