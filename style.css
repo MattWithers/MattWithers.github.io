@@ -476,13 +476,14 @@ body.bg-night .site-title-video .title-night{
   opacity: 1;
 }
 
-/* ===== Birds (behind video layer) ===== */
+
+/* ===== Birds layer (uses birds.svg in the same directory) ===== */
 .birds-layer{
   position: fixed;
   inset: 0;
-  overflow: hidden;
   pointer-events: none;
-  z-index: 0; /* behind .back-img (z-index: 1), above page backgrounds */
+  overflow: hidden;
+  z-index: 0; /* behind .back-img (z-index: 1) */
 }
 
 .birds-layer .bird{
@@ -496,8 +497,8 @@ body.bg-night .site-title-video .title-night{
   animation-iteration-count: infinite;
 }
 
-.birds-layer .bird-one{ animation-duration: 1s;    animation-delay: -.5s; }
-.birds-layer .bird-two{ animation-duration: .9s;   animation-delay: -.75s; }
+.birds-layer .bird-one{ animation-duration: 1s;   animation-delay: -.5s; }
+.birds-layer .bird-two{ animation-duration: .9s;  animation-delay: -.75s; }
 .birds-layer .bird-three{ animation-duration: 1.25s; animation-delay: -.25s; }
 .birds-layer .bird-four{ animation-duration: 1.1s; animation-delay: -.5s; }
 
@@ -531,3 +532,4 @@ body.bg-night .site-title-video .title-night{
   60%{  transform: translate(110vw, 0) scale(.6); }
   100%{ transform: translate(110vw, 0) scale(.6); }
 }
+
