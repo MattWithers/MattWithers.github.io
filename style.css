@@ -577,9 +577,6 @@ body.bg-night .video-profile-card{
   height: 150px;
   flex: 0 0 150px;
   position: relative;
-
-  border-radius: 50%;
-  overflow: hidden;
 }
 
 .vpc-ring{
@@ -599,7 +596,6 @@ body.bg-night .video-profile-card{
   border-radius: 50%;
   object-fit: cover;
   display: block;
-
   padding: 0;
   margin: 0;
 }
@@ -757,3 +753,8 @@ body.bg-night .vpc-btn:hover{
 }
 
 .vpc-portrait:hover .vpc-photo{ transform: scale(1.08); box-shadow: 8px 8px 0 #8d08d0, -8px -8px 0 #ff006f; }
+
+
+/* Fix portrait fill without breaking animations */
+.vpc-photo{padding:0;margin:0;}
+.vpc-portrait{border-radius:50%;}
