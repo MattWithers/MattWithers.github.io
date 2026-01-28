@@ -573,9 +573,9 @@ body.bg-night .video-profile-card{
 .video-profile-card *{ box-sizing: border-box; }
 
 .vpc-portrait{
-  width: 160px;
-  height: 160px;
-  flex: 0 0 160px;
+  width: 120px;
+  height: 120px;
+  flex: 0 0 120px;
   position: relative;
 }
 
