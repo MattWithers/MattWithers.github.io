@@ -573,9 +573,9 @@ body.bg-night .video-profile-card{
 .video-profile-card *{ box-sizing: border-box; }
 
 .vpc-portrait{
-  width: 120px;
-  height: 120px;
-  flex: 0 0 120px;
+  width: 150px;
+  height: 150px;
+  flex: 0 0 150px;
   position: relative;
 }
 
@@ -583,7 +583,7 @@ body.bg-night .video-profile-card{
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  box-shadow: 8px 8px 0 #ff006f, -8px -8px 0 #8d08d0;
+  box-shadow: 10px 10px 0 #ff006f, -10px -10px 0 #8d08d0;
   animation: vpc-rotate 4s linear infinite;
   opacity: 0.95;
 }
