@@ -664,6 +664,14 @@ body.bg-night .vpc-role{ color: #c084fc; }
   flex-wrap: wrap;
 }
 
+/* IMPORTANT: your site-wide `button { width: 2%; float: left; }` was
+   shrinking the Email button inside the profile card. Override it here. */
+.video-profile-card button,
+.video-profile-card .vpc-btn{
+  width: auto !important;
+  float: none !important;
+}
+
 .vpc-btn{
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
@@ -682,6 +690,11 @@ body.bg-night .vpc-role{ color: #c084fc; }
   line-height: 1.2;
   min-height: 32px;
   transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+}
+
+/* Make the About pill match the other buttons exactly */
+.vpc-btn.vpc-about{
+  text-decoration: none;
 }
 
 body.bg-night .vpc-btn{
