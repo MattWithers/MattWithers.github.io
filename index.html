@@ -10,6 +10,7 @@ Give Credit were it's due, The_Bugs
     <title>Matthew's Github Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="style.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   </head>
 
   <body>
@@ -86,6 +87,43 @@ Give Credit were it's due, The_Bugs
       <video id="bgvid" class="bgvid" autoplay muted loop playsinline>
         <source src="TrainRide.webm" type="video/webm" />
       </video>
+      <!-- ✅ Floating profile card (top-right inside the video frame) -->
+      <div class="video-overlay-card" aria-label="Interactive profile card">
+        <div class="vp-portrait" aria-hidden="true">
+          <div class="vp-back"></div>
+          <div class="vp-profile"></div>
+        </div>
+
+        <div class="vp-body">
+          <div class="vp-top">
+            <div class="vp-name">Matthew Withers</div>
+            <div class="vp-pill"><i class="fas fa-bolt"></i> About me</div>
+          </div>
+
+          <div class="vp-role"><span id="vp-retype">Artist</span></div>
+
+          <div class="vp-actions">
+            <a class="vp-btn" href="index7.html" title="Open full About Me page">
+              <i class="fas fa-external-link-alt"></i> Open
+            </a>
+            <button class="vp-btn" type="button" onclick="vpCopyEmail('matthew@example.com')" title="Copy email">
+              <i class="fas fa-copy"></i> Email
+            </button>
+            <a class="vp-btn" href="cv.pdf" download title="Download CV">
+              <i class="fas fa-download"></i> CV
+            </a>
+            <a class="vp-btn icon" href="https://www.linkedin.com/yourprofile" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a class="vp-btn icon" href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="vp-toast" id="vp-toast">Copied!</div>
+      </div>
+
     </div>
 
     <div class="holder"></div>
@@ -224,6 +262,83 @@ Give Credit were it's due, The_Bugs
           el.style.setProperty("--shadows2", buildShadows(layer.count));
         }
       })();
+    </script>
+
+  
+    <!-- ===== Floating profile card JS (isolated) ===== -->
+    <script>
+      (function () {
+        var elem = document.getElementById("vp-retype");
+        if (!elem) return;
+
+        var retype = {
+          retypePhrases: ["Developer","Student","Business Professional","Human","Artist"],
+          index: -1,
+          elem: elem,
+          start: function () {
+            var _this = this;
+            setTimeout(function () { _this.deleteLetter(); }, 1800);
+          },
+          deleteLetter: function () {
+            var word = this.elem.textContent;
+            if (word.length > 0) {
+              this.elem.textContent = word.substring(0, word.length - 1);
+              var _this = this;
+              setTimeout(function () { _this.deleteLetter(); }, 60);
+            } else {
+              this.newLetter();
+            }
+          },
+          newLetter: function () {
+            var current = this.elem.textContent;
+
+            if (current.length === 0) {
+              this.index++;
+              if (this.index >= this.retypePhrases.length) this.index = 0;
+            }
+
+            var target = this.retypePhrases[this.index];
+
+            if (target.length > current.length) {
+              this.elem.textContent = target.substring(0, current.length + 1);
+              var _this = this;
+              var time = Math.round(Math.random() * 90) + 90;
+              setTimeout(function () { _this.newLetter(); }, time);
+            } else {
+              this.start();
+            }
+          }
+        };
+
+        retype.start();
+      })();
+
+      async function vpCopyEmail(email) {
+        try {
+          await navigator.clipboard.writeText(email);
+          vpToast("Copied email!");
+        } catch (e) {
+          var ta = document.createElement("textarea");
+          ta.value = email;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          ta.remove();
+          vpToast("Copied email!");
+        }
+      }
+
+      var vpToastTimer = null;
+      function vpToast(msg) {
+        var t = document.getElementById("vp-toast");
+        if (!t) return;
+        t.textContent = msg;
+        t.classList.add("show");
+        clearTimeout(vpToastTimer);
+        vpToastTimer = setTimeout(function () {
+          t.classList.remove("show");
+        }, 1200);
+      }
     </script>
 
   </body>

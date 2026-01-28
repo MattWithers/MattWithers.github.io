@@ -537,3 +537,201 @@ body.bg-night .birds-layer{
   60%{  transform: translate(110vw, 0) scale(.6); }
   100%{ transform: translate(110vw, 0) scale(.6); }
 }
+
+
+/* =========================
+   Floating profile card overlay (on top-right of .back-img video)
+   ========================= */
+.video-overlay-card{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:min(360px, 42%);
+  max-width:360px;
+  display:flex;
+  gap:14px;
+  align-items:center;
+  padding:14px 14px;
+  border-radius:16px;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+  backdrop-filter: blur(10px);
+  z-index: 6;
+  pointer-events:auto;
+}
+
+body.bg-night .video-overlay-card{
+  background: rgba(15, 18, 24, 0.78);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.video-overlay-card *{ box-sizing:border-box; }
+
+.vp-portrait{
+  width:88px;
+  height:88px;
+  flex: 0 0 88px;
+  position:relative;
+}
+
+.vp-back{
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  box-shadow: 7px 7px 0 #ff006f, -7px -7px 0 #8d08d0;
+  animation: vp-rotate 4s linear infinite;
+}
+
+.vp-profile{
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background-image: url("MatthewProfilePic.jpg");
+  background-size: 100%;
+  background-position:center;
+  background-repeat:no-repeat;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-size 180ms ease;
+}
+
+.vp-profile:hover{
+  background-size: 112%;
+  box-shadow: 7px 7px 0 #8d08d0, -7px -7px 0 #ff006f;
+}
+
+.vp-body{
+  min-width: 0;
+  flex: 1 1 auto;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.vp-top{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.vp-name{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  color: rgba(35,35,35,0.95);
+}
+
+body.bg-night .vp-name{ color: rgba(245,245,245,0.95); }
+
+.vp-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,0.10);
+  color: rgba(55,55,55,0.9);
+  background: rgba(255,255,255,0.55);
+}
+
+body.bg-night .vp-pill{
+  color: rgba(240,240,240,0.92);
+  border-color: rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.22);
+}
+
+.vp-role{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  color: #8d08d0;
+}
+
+body.bg-night .vp-role{ color: #c084fc; }
+
+#vp-retype{
+  border-right: solid 0.1em currentColor;
+  padding-right: 0.08em;
+}
+
+.vp-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.vp-btn{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 8px 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.62);
+  color: rgba(35,35,35,0.92);
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+}
+
+.vp-btn.icon{ padding:8px 9px; }
+
+body.bg-night .vp-btn{
+  border-color: rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.18);
+  color: rgba(245,245,245,0.92);
+}
+
+.vp-btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.86);
+  border-color: rgba(33,156,123,0.45);
+}
+
+body.bg-night .vp-btn:hover{
+  background: rgba(0,0,0,0.28);
+  border-color: rgba(33,156,123,0.65);
+}
+
+.vp-toast{
+  position:absolute;
+  left: 14px;
+  bottom: -44px;
+  background: rgba(17,24,39,0.92);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: 160ms ease;
+  pointer-events:none;
+}
+
+.vp-toast.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+@keyframes vp-rotate { to { transform: rotate(360deg); } }
+
+@media (max-width: 1100px){
+  .video-overlay-card{ width:min(340px, 48%); }
+}
+
+@media (max-width: 900px){
+  .video-overlay-card{
+    width: calc(100% - 24px);
+    max-width: none;
+    left: 12px;
+    right: 12px;
+  }
+}
