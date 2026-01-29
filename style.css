@@ -1071,19 +1071,26 @@ body.bg-night .subway-overlay .station-ring{
 
 
 
-/* ===== Profile card: pin to TOP-RIGHT of the VIDEO FRAME ===== */
-/* Keep .back-img as your original absolute-positioned frame; it's still a positioned ancestor. */
-.back-img{
-  position: absolute !important; /* restore original behavior */
-}
 
-.video-profile-card{
+
+
+
+/* ===== Profile card: top-right CORNER exactly at video frame top-right CORNER ===== */
+.back-img{ position: absolute !important; }
+
+.back-img .video-profile-card{
   position: absolute !important;
+  inset: 0 0 auto auto !important;   /* top:0; right:0; bottom:auto; left:auto */
   top: 0 !important;
   right: 0 !important;
-  left: auto !important;
   bottom: auto !important;
-  margin: 0 !important;
+  left: auto !important;
+
+  /* kill any centering transforms from other rules */
   transform: none !important;
+  translate: 0 0 !important;
+  transform-origin: top right !important;
+
+  margin: 0 !important;
   z-index: 12 !important;
 }
