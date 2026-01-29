@@ -88,11 +88,9 @@ Give Credit were it's due, The_Bugs
         <source src="TrainRide.webm" type="video/webm" />
       </video>
 
-<!-- ===== Subway Menu Overlay ===== -->
-
-<!-- ===== Subway Menu Overlay ===== -->
-<div class="subway-overlay">
-<svg viewBox="0 0 1200 520" aria-label="Interactive subway map">
+<!-- ===== Subway Menu Overlay (SVG only) ===== -->
+<div class="subway-overlay" aria-label="Subway navigation">
+  <svg viewBox="0 0 1200 520" aria-label="Interactive subway map">
           <!-- ROUTES -->
           <g class="route" data-route="general" style="--prog: 0; --len: 1;">
             <path id="path-general" class="line-base" d="M120 110 H640 Q700 110 700 170 V210 H940" />
@@ -147,31 +145,31 @@ Give Credit were it's due, The_Bugs
 
           <!-- STATIONS -->
           <!-- General -->
-          <g class="station" data-id="general" data-title="General" data-parent="general" data-x="120" data-y="110" tabindex="0">
+          <g class="station" data-id="general" data-title="Resume" data-parent="general" data-x="120" data-y="110" tabindex="0">
             <circle class="station-ring" cx="120" cy="110" r="14"></circle>
             <circle class="station-node" cx="120" cy="110" r="10"></circle>
             <circle class="station-hit" cx="120" cy="110" r="26"></circle>
-            <text class="station-label" x="120" y="78" text-anchor="middle">General</text>
+            <text class="station-label" x="120" y="78" text-anchor="middle">Resume</text>
           </g>
-          <g class="station" data-id="general-sub-1" data-title="General • Sub 1" data-parent="general" data-x="320" data-y="110" tabindex="0">
+          <g class="station" data-id="general-sub-1" data-title="LinkedIn" data-parent="general" data-x="320" data-y="110" tabindex="0">
             <circle class="station-ring" cx="320" cy="110" r="14"></circle>
             <circle class="station-node" cx="320" cy="110" r="10"></circle>
             <circle class="station-hit" cx="320" cy="110" r="26"></circle>
-            <text class="station-label" x="320" y="78" text-anchor="middle">General <tspan class="sub">• Sub 1</tspan></text>
+            <text class="station-label" x="320" y="78" text-anchor="middle">LinkedIn</text>
           </g>
-          <g class="station" data-id="general-sub-2" data-title="General • Sub 2" data-parent="general" data-x="520" data-y="110" tabindex="0">
+          <g class="station" data-id="general-sub-2" data-title="YouTube" data-parent="general" data-x="520" data-y="110" tabindex="0">
             <circle class="station-ring" cx="520" cy="110" r="14"></circle>
             <circle class="station-node" cx="520" cy="110" r="10"></circle>
             <circle class="station-hit" cx="520" cy="110" r="26"></circle>
-            <text class="station-label" x="520" y="78" text-anchor="middle">General <tspan class="sub">• Sub 2</tspan></text>
+            <text class="station-label" x="520" y="78" text-anchor="middle">YouTube</text>
           </g>
-          <g class="station" data-id="central" data-title="Central Interchange" data-parent="general" data-x="700" data-y="210" tabindex="0">
+          <g class="station station-unused" data-id="central" data-title="Central Interchange" data-parent="general" data-x="700" data-y="210" tabindex="0">
             <circle class="station-ring" cx="700" cy="210" r="18"></circle>
             <circle class="station-node interchange" cx="700" cy="210" r="12"></circle>
             <circle class="station-hit" cx="700" cy="210" r="30"></circle>
             <text class="station-label" x="740" y="214" text-anchor="start">Central <tspan class="sub">Interchange</tspan></text>
           </g>
-          <g class="station" data-id="general-east" data-title="General • East" data-parent="general" data-x="860" data-y="210" tabindex="0">
+          <g class="station station-unused" data-id="general-east" data-title="General • East" data-parent="general" data-x="860" data-y="210" tabindex="0">
             <circle class="station-ring" cx="860" cy="210" r="14"></circle>
             <circle class="station-node" cx="860" cy="210" r="10"></circle>
             <circle class="station-hit" cx="860" cy="210" r="26"></circle>
@@ -179,25 +177,25 @@ Give Credit were it's due, The_Bugs
           </g>
 
           <!-- Art -->
-          <g class="station" data-id="art" data-title="Art" data-parent="art" data-x="460" data-y="60" tabindex="0">
+          <g class="station" data-id="art" data-title="Renders" data-parent="art" data-x="460" data-y="60" tabindex="0">
             <circle class="station-ring" cx="460" cy="60" r="14"></circle>
             <circle class="station-node" cx="460" cy="60" r="10"></circle>
             <circle class="station-hit" cx="460" cy="60" r="26"></circle>
-            <text class="station-label" x="460" y="28" text-anchor="middle">Art</text>
+            <text class="station-label" x="460" y="28" text-anchor="middle">Renders</text>
           </g>
-          <g class="station" data-id="art-sub-1" data-title="Art • Sub 1" data-parent="art" data-x="460" data-y="120" tabindex="0">
+          <g class="station" data-id="art-sub-1" data-title="Models" data-parent="art" data-x="460" data-y="120" tabindex="0">
             <circle class="station-ring" cx="460" cy="120" r="14"></circle>
             <circle class="station-node" cx="460" cy="120" r="10"></circle>
             <circle class="station-hit" cx="460" cy="120" r="26"></circle>
-            <text class="station-label" x="420" y="124" text-anchor="end">Art <tspan class="sub">• Sub 1</tspan></text>
+            <text class="station-label" x="420" y="124" text-anchor="end">Models</text>
           </g>
-          <g class="station" data-id="art-sub-2" data-title="Art • Sub 2" data-parent="art" data-x="460" data-y="180" tabindex="0">
+          <g class="station" data-id="art-sub-2" data-title="Music" data-parent="art" data-x="460" data-y="180" tabindex="0">
             <circle class="station-ring" cx="460" cy="180" r="14"></circle>
             <circle class="station-node" cx="460" cy="180" r="10"></circle>
             <circle class="station-hit" cx="460" cy="180" r="26"></circle>
-            <text class="station-label" x="420" y="184" text-anchor="end">Art <tspan class="sub">• Sub 2</tspan></text>
+            <text class="station-label" x="420" y="184" text-anchor="end">Music</text>
           </g>
-          <g class="station" data-id="art-sub-3" data-title="Art • Sub 3" data-parent="art" data-x="460" data-y="240" tabindex="0">
+          <g class="station station-unused" data-id="art-sub-3" data-title="Art • Sub 3" data-parent="art" data-x="460" data-y="240" tabindex="0">
             <circle class="station-ring" cx="460" cy="240" r="14"></circle>
             <circle class="station-node" cx="460" cy="240" r="10"></circle>
             <circle class="station-hit" cx="460" cy="240" r="26"></circle>
@@ -205,31 +203,31 @@ Give Credit were it's due, The_Bugs
           </g>
 
           <!-- Code -->
-          <g class="station" data-id="code" data-title="Code" data-parent="code" data-x="140" data-y="360" tabindex="0">
+          <g class="station" data-id="code" data-title="GitHub" data-parent="code" data-x="140" data-y="360" tabindex="0">
             <circle class="station-ring" cx="140" cy="360" r="14"></circle>
             <circle class="station-node" cx="140" cy="360" r="10"></circle>
             <circle class="station-hit" cx="140" cy="360" r="26"></circle>
-            <text class="station-label" x="140" y="328" text-anchor="middle">Code</text>
+            <text class="station-label" x="140" y="328" text-anchor="middle">GitHub</text>
           </g>
-          <g class="station" data-id="code-sub-1" data-title="Code • Sub 1" data-parent="code" data-x="280" data-y="360" tabindex="0">
+          <g class="station" data-id="code-sub-1" data-title="Rubber Ducky" data-parent="code" data-x="280" data-y="360" tabindex="0">
             <circle class="station-ring" cx="280" cy="360" r="14"></circle>
             <circle class="station-node" cx="280" cy="360" r="10"></circle>
             <circle class="station-hit" cx="280" cy="360" r="26"></circle>
-            <text class="station-label" x="280" y="328" text-anchor="middle">Code <tspan class="sub">• Sub 1</tspan></text>
+            <text class="station-label" x="280" y="328" text-anchor="middle">Rubber Ducky</text>
           </g>
-          <g class="station" data-id="code-sub-2" data-title="Code • Sub 2" data-parent="code" data-x="420" data-y="360" tabindex="0">
+          <g class="station" data-id="code-sub-2" data-title="LeetCode" data-parent="code" data-x="420" data-y="360" tabindex="0">
             <circle class="station-ring" cx="420" cy="360" r="14"></circle>
             <circle class="station-node" cx="420" cy="360" r="10"></circle>
             <circle class="station-hit" cx="420" cy="360" r="26"></circle>
-            <text class="station-label" x="420" y="328" text-anchor="middle">Code <tspan class="sub">• Sub 2</tspan></text>
+            <text class="station-label" x="420" y="328" text-anchor="middle">LeetCode</text>
           </g>
-          <g class="station" data-id="code-sub-3" data-title="Code • Sub 3" data-parent="code" data-x="560" data-y="360" tabindex="0">
+          <g class="station station-unused" data-id="code-sub-3" data-title="Code • Sub 3" data-parent="code" data-x="560" data-y="360" tabindex="0">
             <circle class="station-ring" cx="560" cy="360" r="14"></circle>
             <circle class="station-node" cx="560" cy="360" r="10"></circle>
             <circle class="station-hit" cx="560" cy="360" r="26"></circle>
             <text class="station-label" x="560" y="328" text-anchor="middle">Code <tspan class="sub">• Sub 3</tspan></text>
           </g>
-          <g class="station" data-id="code-sub-4" data-title="Code • Sub 4" data-parent="code" data-x="660" data-y="320" tabindex="0">
+          <g class="station station-unused" data-id="code-sub-4" data-title="Code • Sub 4" data-parent="code" data-x="660" data-y="320" tabindex="0">
             <circle class="station-ring" cx="660" cy="320" r="14"></circle>
             <circle class="station-node" cx="660" cy="320" r="10"></circle>
             <circle class="station-hit" cx="660" cy="320" r="26"></circle>
@@ -237,25 +235,25 @@ Give Credit were it's due, The_Bugs
           </g>
 
           <!-- Parallel line stops -->
-          <g class="station" data-id="parallel" data-title="Parallel" data-parent="parallel" data-x="180" data-y="420" tabindex="0">
+          <g class="station station-unused" data-id="parallel" data-title="Parallel" data-parent="parallel" data-x="180" data-y="420" tabindex="0">
             <circle class="station-ring" cx="180" cy="420" r="14"></circle>
             <circle class="station-node" cx="180" cy="420" r="10"></circle>
             <circle class="station-hit" cx="180" cy="420" r="26"></circle>
             <text class="station-label" x="180" y="388" text-anchor="middle">Parallel</text>
           </g>
-          <g class="station" data-id="parallel-sub-1" data-title="Parallel • Sub 1" data-parent="parallel" data-x="340" data-y="420" tabindex="0">
+          <g class="station station-unused" data-id="parallel-sub-1" data-title="Parallel • Sub 1" data-parent="parallel" data-x="340" data-y="420" tabindex="0">
             <circle class="station-ring" cx="340" cy="420" r="14"></circle>
             <circle class="station-node" cx="340" cy="420" r="10"></circle>
             <circle class="station-hit" cx="340" cy="420" r="26"></circle>
             <text class="station-label" x="340" y="388" text-anchor="middle">Parallel <tspan class="sub">• Sub 1</tspan></text>
           </g>
-          <g class="station" data-id="parallel-sub-2" data-title="Parallel • Sub 2" data-parent="parallel" data-x="500" data-y="420" tabindex="0">
+          <g class="station station-unused" data-id="parallel-sub-2" data-title="Parallel • Sub 2" data-parent="parallel" data-x="500" data-y="420" tabindex="0">
             <circle class="station-ring" cx="500" cy="420" r="14"></circle>
             <circle class="station-node" cx="500" cy="420" r="10"></circle>
             <circle class="station-hit" cx="500" cy="420" r="26"></circle>
             <text class="station-label" x="500" y="388" text-anchor="middle">Parallel <tspan class="sub">• Sub 2</tspan></text>
           </g>
-          <g class="station" data-id="parallel-sub-3" data-title="Parallel • Sub 3" data-parent="parallel" data-x="660" data-y="420" tabindex="0">
+          <g class="station station-unused" data-id="parallel-sub-3" data-title="Parallel • Sub 3" data-parent="parallel" data-x="660" data-y="420" tabindex="0">
             <circle class="station-ring" cx="660" cy="420" r="14"></circle>
             <circle class="station-node" cx="660" cy="420" r="10"></circle>
             <circle class="station-hit" cx="660" cy="420" r="26"></circle>
@@ -263,35 +261,36 @@ Give Credit were it's due, The_Bugs
           </g>
 
           <!-- Misc -->
-          <g class="station" data-id="misc" data-title="Miscellaneous" data-parent="misc" data-x="940" data-y="70" tabindex="0">
+          <g class="station" data-id="misc" data-title="Cryptid Dating Sim" data-parent="misc" data-x="940" data-y="70" tabindex="0">
             <circle class="station-ring" cx="940" cy="70" r="14"></circle>
             <circle class="station-node" cx="940" cy="70" r="10"></circle>
             <circle class="station-hit" cx="940" cy="70" r="26"></circle>
-            <text class="station-label" x="940" y="38" text-anchor="middle">Misc</text>
+            <text class="station-label" x="940" y="38" text-anchor="middle">Cryptid Dating Sim</text>
           </g>
-          <g class="station" data-id="misc-sub-1" data-title="Misc • Sub 1" data-parent="misc" data-x="940" data-y="300" tabindex="0">
+          <g class="station" data-id="misc-sub-1" data-title="Hall of Forgotten Prototypes" data-parent="misc" data-x="940" data-y="300" tabindex="0">
             <circle class="station-ring" cx="940" cy="300" r="14"></circle>
             <circle class="station-node" cx="940" cy="300" r="10"></circle>
             <circle class="station-hit" cx="940" cy="300" r="26"></circle>
-            <text class="station-label" x="980" y="304" text-anchor="start">Misc <tspan class="sub">• Sub 1</tspan></text>
+            <text class="station-label" x="980" y="304" text-anchor="start">Hall of Forgotten Prototypes</text>
           </g>
-          <g class="station" data-id="misc-sub-2" data-title="Misc • Sub 2" data-parent="misc" data-x="940" data-y="360" tabindex="0">
+          <g class="station" data-id="misc-sub-2" data-title="Chess.com" data-parent="misc" data-x="940" data-y="360" tabindex="0">
             <circle class="station-ring" cx="940" cy="360" r="14"></circle>
             <circle class="station-node" cx="940" cy="360" r="10"></circle>
             <circle class="station-hit" cx="940" cy="360" r="26"></circle>
-            <text class="station-label" x="980" y="364" text-anchor="start">Misc <tspan class="sub">• Sub 2</tspan></text>
+            <text class="station-label" x="980" y="364" text-anchor="start">Chess.com</text>
           </g>
-          <g class="station" data-id="misc-sub-3" data-title="Misc • Sub 3" data-parent="misc" data-x="940" data-y="420" tabindex="0">
+          <g class="station" data-id="misc-sub-3" data-title="Goodreads" data-parent="misc" data-x="940" data-y="420" tabindex="0">
             <circle class="station-ring" cx="940" cy="420" r="14"></circle>
             <circle class="station-node" cx="940" cy="420" r="10"></circle>
             <circle class="station-hit" cx="940" cy="420" r="26"></circle>
-            <text class="station-label" x="980" y="424" text-anchor="start">Misc <tspan class="sub">• Sub 3</tspan></text>
+            <text class="station-label" x="980" y="424" text-anchor="start">Goodreads</text>
           </g>
         </svg>
+  <div class="subway-tooltip" role="status" aria-hidden="true"></div>
 </div>
 
 
-    <div class="panel">
+<div class="panel">
       <div class="map-card" role="region" aria-label="Subway map">
         <svg viewBox="0 0 1200 520" aria-label="Interactive subway map">
           <!-- ROUTES -->
@@ -819,75 +818,6 @@ Give Credit were it's due, The_Bugs
         <div class="vpc-toast" id="vpc-toast">Copied!</div>
       </div>
     </div>
-
-    <div class="holder"></div>
-
-    <!--==========Bars==========-->
-    <div class="bar-1">
-      <img
-        src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEyOHB4IiBoZWlnaHQ9IjEyOHB4IiB2aWV3Qm94PSIwIDAgNTEwIDUxMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEwIDUxMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnIGlkPSJmYXZvcml0ZSI+CgkJPHBhdGggZD0iTTI1NSw0ODkuNmwtMzUuNy0zNS43Qzg2LjcsMzM2LjYsMCwyNTcuNTUsMCwxNjAuNjVDMCw4MS42LDYxLjIsMjAuNCwxNDAuMjUsMjAuNGM0My4zNSwwLDg2LjcsMjAuNCwxMTQuNzUsNTMuNTUgICAgQzI4My4wNSw0MC44LDMyNi40LDIwLjQsMzY5Ljc1LDIwLjRDNDQ4LjgsMjAuNCw1MTAsODEuNiw1MTAsMTYwLjY1YzAsOTYuOS04Ni43LDE3NS45NS0yMTkuMywyOTMuMjVMMjU1LDQ4OS42eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+Cjwvc3ZnPgo="
-        height="40%"
-      />
-      <p>General</p>&nbsp;&nbsp;&nbsp;
-      <div class="menu-1">
-        <a href="Resume - Matthew Withers - Jan 20th 2026.pdf">Resume</a><p1>,</p1> &nbsp;&nbsp;
-        <a href="https://www.linkedin.com/in/matthew-withers-hr/">LinkedIn</a><p1>,</p1> &nbsp;&nbsp;
-        <a href="https://www.youtube.com/@MatthewJamesWithers">Youtube</a><p1>,</p1> &nbsp;&nbsp;
-      </div>
-    </div>
-
-    <div class="bar-2">
-      <img
-        src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUyNS4xNTIgNTI1LjE1MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTI1LjE1MiA1MjUuMTUyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjEyOHB4IiBoZWlnaHQ9IjEyOHB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDIwLjczNSwzNzEuMjE3Yy0yMC4wMjEsMC0zNy45NDIsNy44NTUtNTEuNTk2LDIwLjI0TDE4MS4xMTIsMjgyLjA5NGMxLjM1Ny02LjA2MSwyLjQwNy0xMi4xNjYsMi40MDctMTguNDY4ICAgYzAtNi4zMDItMS4wNzItMTIuMzg1LTIuNDA3LTE4LjQ2OGwxODUuOTA0LTEwOC4zMzVjMTQuMTc5LDEzLjEyOSwzMi45MzEsMjEuMzM0LDUzLjcxOSwyMS4zMzQgICBjNDMuODI4LDAsNzkuMTQ1LTM1LjI1MSw3OS4xNDUtNzkuMDc5QzQ5OS44OCwzNS4zMzgsNDY0LjU0MSwwLDQyMC43MzUsMGMtNDMuNzQxLDAtNzkuMDc5LDM1LjMzOC03OS4wNzksNzkuMDU3ICAgYzAsNi4zODksMS4wNzIsMTIuMzg1LDIuNDA3LDE4LjQ2OEwxNTguMTU4LDIwNS45NDdjLTE0LjIwMS0xMy4xOTQtMzIuOTMxLTIxLjM3OC01My43NDEtMjEuMzc4ICAgYy00My44MjgsMC03OS4xNDUsMzUuMzE3LTc5LjE0NSw3OS4wNTdzMzUuMzE3LDc5LjA3OSw3OS4xNDUsNzkuMDc5YzIwLjc4NywwLDM5LjU0LTguMjA2LDUzLjcxOS0yMS4zMzRsMTg3LjY5OCwxMDkuNjA0ICAgYy0xLjI5MSw1LjU4LTIuMTAxLDExLjQtMi4xMDEsMTcuMTk5YzAsNDIuNDUsMzQuNTk0LDc2Ljk3OSw3Ni45NzksNzYuOTc5YzQyLjQyOCwwLDc3LjA0NC0zNC41MDcsNzcuMDQ0LTc2Ljk3OSAgIFM0NjMuMTYzLDM3MS4yMTcsNDIwLjczNSwzNzEuMjE3eiIgZmlsbD0iI0ZGRkZGRiIvPgo8L2c+Cjwvc3ZnPgo="
-        height="40%"
-      />
-      <p>Art</p>&nbsp;&nbsp;&nbsp;
-      <div class="menu-2">
-        <a href="rendergallery.html">Renders</a><p1>,</p1> &nbsp;&nbsp;
-        <a href="modelgallery.html">Models</a><p1>,</p1> &nbsp;&nbsp;
-        <a href="https://soundcloud.com/organic-analog">Music</a><p1>,</p1> &nbsp;&nbsp;
-      </div>
-    </div>
-
-    <div class="bar-3">
-      <img
-        src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEyOHB4IiBoZWlnaHQ9IjEyOHB4IiB2aWV3Qm94PSIwIDAgOTQuNTA0IDk0LjUwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgOTQuNTA0IDk0LjUwNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik05My45MTgsNDUuODMzTDY5Ljc5OSwyMS43MTRjLTAuNzUtMC43NS0yLjA3Ny0wLjc1LTIuODI3LDBsLTUuMjI5LDUuMjI5Yy0wLjc4MSwwLjc4MS0wLjc4MSwyLjA0NywwLDIuODI4ICAgIGwxNy40NzcsMTcuNDc1TDYxLjc0NCw2NC43MjRjLTAuNzgxLDAuNzgxLTAuNzgxLDIuMDQ3LDAsMi44MjhsNS4yMjksNS4yMjljMC4zNzUsMC4zNzUsMC44ODQsMC41ODcsMS40MTQsMC41ODcgICAgYzAuNTI5LDAsMS4wMzktMC4yMTIsMS40MTQtMC41ODdsMjQuMTE3LTI0LjExOEM5NC42OTksNDcuODgxLDk0LjY5OSw0Ni42MTQsOTMuOTE4LDQ1LjgzM3oiIGZpbGw9IiNGRkZGRkYiLz4KCQk8cGF0aCBkPSJNMzIuNzU5LDY0LjcyNEwxNS4yODUsNDcuMjQ4bDE3LjQ3Ny0xNy40NzVjMC4zNzUtMC4zNzUsMC41ODYtMC44ODMsMC41ODYtMS40MTRjMC0wLjUzLTAuMjEtMS4wMzktMC41ODYtMS40MTQgICAgbC01LjIyOS01LjIyOWMtMC4zNzUtMC4zNzUtMC44ODQtMC41ODYtMS40MTQtMC41ODZjLTAuNTMsMC0xLjAzOSwwLjIxMS0xLjQxNCwwLjU4NkwwLjU4NSw0NS44MzMgICAgYy0wLjc4MSwwLjc4MS0wLjc4MSwyLjA0NywwLDIuODI5TDI0LjcwNCw3Mi43OGMwLjM3NSwwLjM3NSwwLjg4NCwwLjU4NywxLjQxNCwwLjU4N2MwLjUzLDAsMS4wMzktMC4yMTIsMS40MTQtMC41ODdsNS4yMjktNS4yMjkgICAgQzMzLjU0Miw2Ni43NzEsMzMuNTQyLDY1LjUwNSwzMi43NTksNjQuNzI0eiIgZmlsbD0iI0ZGRkZGRiIvPgoJCTxwYXRoIGQ9Ik02MC45NjcsMTMuNmMtMC4yNTQtMC40NjYtMC42ODItMC44MTItMS4xOS0wLjk2MmwtNC4yMzktMS4yNTFjLTEuMDU4LTAuMzE0LTIuMTcyLDAuMjkzLTIuNDg0LDEuMzUyTDMzLjM3NSw3OS4zODIgICAgYy0wLjE1LDAuNTA5LTAuMDkyLDEuMDU2LDAuMTYxLDEuNTIxYzAuMjUzLDAuNDY3LDAuNjgyLDAuODEyLDEuMTksMC45NjNsNC4yMzksMS4yNTFjMC4xODksMC4wNTYsMC4zOCwwLjA4MywwLjU2NywwLjA4MyAgICBjMC44NjMsMCwxLjY2LTAuNTY0LDEuOTE3LTEuNDM1bDE5LjY3OS02Ni42NDRDNjEuMjc4LDE0LjYxMiw2MS4yMjEsMTQuMDY1LDYwLjk2NywxMy42eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+Cjwvc3ZnPgo="
-        height="40%"
-      />
-      <p>Code</p>&nbsp;&nbsp;&nbsp;
-      <div class="menu-3">
-        <a href="https://github.com/MattWithers/MattWithers.github.io">Github</a><p1>,</p1> &nbsp;&nbsp;
-        <a href="https://hak5.org">Rubber Ducky</a><p1>,</p1> &nbsp;&nbsp;
-        <a href="UnfinishedPage.html">Leetcode</a><p1>,</p1> &nbsp;&nbsp;
-      </div>
-    </div>
-
-    <div class="bar-4">
-      <img
-        src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIE1uMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTI4cHgiIGhlaWdodD0iMTI4cHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWxuczp4c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNOTcuMzQ0LDQ4Mi4xN2MtMjMuMzExLDAtNDUuMjE1LTkuMDg0LTYxLjY4OS0yNS41NTVjLTM0LjAxLTM0LjAxNC0zNC4wMS04OS4zNjEsMC0xMjMuMzcxTDMwNS4zNDMsNjMuNTQzICAgYzIxLjcyNy0yMS43NSw1MC42NDUtMzMuNzEzLDgxLjM5LTMzLjcxM2MzMC43NSwwLDU5LjY2NywxMS45NjMsODEuMzk1LDMzLjcxM2MyMS43NDgsMjEuNzQ0LDMzLjcyNiw1MC42NDUsMzMuNzI2LDgxLjM4OSAgIGMwLDMwLjc1LTExLjk2NCw1OS42NS0zMy43MDgsODEuMzgxTDI1NS44NDMsNDM4LjU5NmMtNi4zNzQsNi4zNzEtMTYuNjk2LDYuMzcxLTIzLjA2NywwYy02LjM3NC02LjM3My02LjM3NC0xNi42OTUsMC0yMy4wNyAgIGwyMTIuMjk4LTIxMi4yODNjMTUuNTgzLTE1LjU4LDI0LjE1My0zNi4yOTEsMjQuMTUzLTU4LjMxMWMwLTIyLjAxNi04LjU4OC00Mi43NC0yNC4xNjctNTguMzIyICAgYy0xNS41ODMtMTUuNTgtMzYuMjk0LTI0LjE1NC01OC4zMjctMjQuMTU0Yy0yMi4wMjksMC00Mi43NCw4LjU3NC01OC4zMjMsMjQuMTU0TDU4LjcyNSwzNTYuMzExICAgYy0yMS4yODMsMjEuMzAxLTIxLjI4Myw1NS45MzgsMCw3Ny4yMzRjMjAuNjQ1LDIwLjYxNyw1Ni41ODksMjAuNjE3LDc3LjIzMywwbDE4MS4wOTEtMTgxLjEwNSAgIGM0LjkyNC00LjkyNCw3Ljc0NS0xMS43NCw3Ljc0NS0xOC42ODhjMC03LjA0NS0yLjc1NS0xMy42ODYtNy43NTktMTguNjg5Yy0xMC4yOTEtMTAuMjkxLTI3LjA2Ny0xMC4zMjItMzcuMzU4LDBMMTU2LDMzOC43NTQgICBjLTYuMzcsNi4zNzUtMTYuNjk3LDYuMzc1LTIzLjA2NywwYy02LjM3NC02LjM3MS02LjM3NC0xNi42OTcsMC0yMy4wNjZsMTIzLjY3My0xMjMuNjkxYzIzLjAwNS0yMy4wMDQsNjAuNDYxLTIzLjAwNCw4My40OTcsMCAgIGMxMS4xNjksMTEuMTY2LDE3LjMxNywyNiwxNy4zMTcsNDEuNzU2YzAsMTUuNTQ3LTYuMzA4LDMwLjc2Mi0xNy4zLDQxLjc1NEwxNTkuMDI5LDQ1Ni42MTUgICBDMTQyLjU1NSw0NzMuMDg2LDEyMC42NSw0ODIuMTcsOTcuMzQ0LDQ4Mi4xN3oiIGZpbGw9IiNGRkZGRkYiLz4KPC9nPgo8L3N2Zz4K"
-        height="40%"
-      />
-      <p>Games</p>&nbsp;&nbsp;&nbsp;
-      <div class="menu-4">
-        <a href="DatingSimHTML5/DatingSimPage.html">Cryptid Dating Sim</a><p1>,</p1> &nbsp;&nbsp;
-        <a href="HallofProjects/HallofProjects.html">Hall of Forgotten Prototypes</a><p1>,</p1> &nbsp;&nbsp;
-      </div>
-    </div>
-
-    <div class="bar-5">
-      <img
-        src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4IiB2aWV3Qm94PSIwIDAgMjkuODk0IDI5Ljg5NSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjkuODk0IDI5Ljg5NTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnPgoJCTxnIGlkPSJJY29uc183XyI+CgkJCTxnPgoJCQkJPHBhdGggZD0iTTE0LjMwOCwxMy4wNDhjMC4zNTUsMC4zNSwwLjkyNCwwLjM1LDEuMjgsMGMxLjIyLTEuMjAzLDMuODEzLTMuODAzLDQuNDUxLTQuNzkyYzAuOTA4LTEuNDA2LDEuODEyLTIuNTY2LDEuODEyLTQuNTkxICAgICAgUzIwLjIxMSwwLDE4LjE4NiwwYy0xLjQxNiwwLTIuNjMsMC44MTItMy4yNCwxLjk4N0MxNC4zMzYsMC44MTIsMTMuMTIzLDAsMTEuNzA3LDBDOS42ODIsMCw4LjA0MiwxLjY0LDguMDQyLDMuNjY1ICAgICAgUzguOTQ3LDYuODUsOS44NTQsOC4yNTZDMTAuNDk1LDkuMjQ0LDEzLjA4OCwxMS44NDUsMTQuMzA4LDEzLjA0OHoiIGZpbGw9IiMwMDAwMDAiLz4KCQkJCTxwYXRoIGQ9Ik0xNS41ODcsMTYuODQ4Yy0wLjM1NS0wLjM1MS0wLjkyNS0wLjM1MS0xLjI4LDBjLTEuMjIsMS4yMDItMy44MTMsMy44MDQtNC40NTIsNC43OTEgICAgICBjLTAuOTA3LDEuNDA2LTEuODEzLDIuNTY2LTEuODEzLDQuNTkzYzAsMi4wMjMsMS42NCwzLjY2MywzLjY2NSwzLjY2M2MxLjQxNiwwLDIuNjMtMC44MTIsMy4yNC0xLjk4NSAgICAgIGMwLjYxMSwxLjE3NSwxLjgyNCwxLjk4NSwzLjI0LDEuOTg1YzIuMDI0LDAsMy42NjUtMS42NCwzLjY2NS0zLjY2M2MwLTIuMDI1LTAuOTA0LTMuMTg3LTEuODEyLTQuNTkzICAgICAgQzE5LjQwMiwyMC42NSwxNi44MDcsMTguMDQ5LDE1LjU4NywxNi44NDh6IiBmaWxsPSIjMDAwMDAwIi8+CgkJCQk8cGF0aCBkPSJNMjcuOTA4LDE0Ljk0N2MxLjE3NC0wLjYxLDEuOTg1LTEuODI0LDEuOTg1LTMuMjRjMC0yLjAyNS0xLjY0LTMuNjY1LTMuNjY0LTMuNjY2Yy0yLjAyNCwwLTMuMTg2LDAuOTA2LTQuNTkyLDEuODEzICAgICAgYy0wLjk4NywwLjYzOS0zLjU5LDMuMjMyLTQuNzkyLDQuNDUyYy0wLjM1MSwwLjM1NS0wLjM1MSwwLjkyNCwwLDEuMjc5YzEuMjAyLDEuMjIsMy44MDUsMy44MTMsNC43OTIsNC40NTMgICAgICBjMS40MDYsMC45MDcsMi41NjYsMS44MTIsNC41OTIsMS44MTJjMi4wMjMsMCwzLjY2NC0xLjY0MiwzLjY2NC0zLjY2NkMyOS44OTYsMTYuNzcxLDI5LjA4MywxNS41NTcsMjcuOTA4LDE0Ljk0N3oiIGZpbGw9IiMwMDAwMDAiLz4KCQkJCTxwYXRoIGQ9Ik0xMy4wNDgsMTUuNTg3YzAuMzUtMC4zNTQsMC4zNS0wLjkyNSwwLTEuMjhjLTEuMjAzLTEuMjItMy44MDQtMy44MTMtNC43OTItNC40NTJDNi44NTEsOC45NDgsNS42OSw4LjA0MiwzLjY2Nyw4LjA0MiAgICAgIGMtMi4wMjUsMC0zLjY2NSwxLjY0MS0zLjY2NSwzLjY2NmMwLDEuNDE2LDAuODEzLDIuNjMsMS45ODcsMy4yNGMtMS4xNzUsMC42MS0xLjk4NywxLjgyMy0xLjk4NywzLjIzOSAgICAgIGMwLDIuMDIzLDEuNjQsMy42NjMsMy42NjVjMi4wMjQsMCwzLjE4NS0wLjkwNSw0LjU5LTEuODEyQzkuMjQ1LDE5LjQsMTEuODQ1LDE2LjgwNywxMy4wNDgsMTUuNTg3eiIgZmlsbD0iIzAwMDAwMCIvPgoJCQk8L2c+CgkJPC9nPgoJPC9nPgo8L2c+Cjwvc3ZnPgo="
-        height="40%"
-        class="rotate"
-      />
-      <p>Miscellaneous</p>&nbsp;&nbsp;&nbsp;
-      <div class="menu-5">
-        <a href="https://www.chess.com/member/blueberryjello">Chess.com</a><p1>,</p1> &nbsp;&nbsp;
-        <a href="https://www.goodreads.com/user/show/198183648-matthew-withers">Goodreads</a><p1>,</p1> &nbsp;&nbsp;
-      </div>
-    </div>
-
-    
 <script>
 /* ===== Floating profile card behavior (typing + copy email) ===== */
 (function () {
@@ -1021,32 +951,259 @@ function vpcToast(msg) {
 
   
 <script>
-const stationLinks = {
-  "general": "Resume - Matthew Withers - Jan 20th 2026.pdf",
-  "general-sub-1": "https://www.linkedin.com/in/matthew-withers-hr/",
-  "general-sub-2": "https://www.youtube.com/@MatthewJamesWithers",
-  "art": "rendergallery.html",
-  "art-sub-1": "modelgallery.html",
-  "art-sub-2": "https://soundcloud.com/organic-analog",
-  "code": "https://github.com/MattWithers/MattWithers.github.io",
-  "code-sub-1": "https://hak5.org",
-  "code-sub-2": "UnfinishedPage.html",
-  "misc": "DatingSimHTML5/DatingSimPage.html",
-  "misc-sub-1": "HallofProjects/HallofProjects.html"
-};
+(function(){
+  const root = document.querySelector(".subway-overlay");
+  if(!root) return;
 
-document.querySelectorAll(".station").forEach(st => {
-  const id = st.dataset.id;
-  if (stationLinks[id]) {
-    st.dataset.href = stationLinks[id];
+  const tooltip = root.querySelector(".subway-tooltip");
+  const routes = new Map(Array.from(root.querySelectorAll(".route[data-route]")).map(g => [g.dataset.route, g]));
+  const stations = Array.from(root.querySelectorAll(".station[data-id]"));
+
+  const pathByRoute = {
+    general:  root.querySelector("#path-general"),
+    art:      root.querySelector("#path-art"),
+    code:     root.querySelector("#path-code"),
+    parallel: root.querySelector("#path-parallel"),
+    misc:     root.querySelector("#path-misc"),
+  };
+
+  const stationLinks = {
+    "general": "Resume - Matthew Withers - Jan 20th 2026.pdf",
+    "general-sub-1": "https://www.linkedin.com/in/matthew-withers-hr/",
+    "general-sub-2": "https://www.youtube.com/@MatthewJamesWithers",
+    "art": "rendergallery.html",
+    "art-sub-1": "modelgallery.html",
+    "art-sub-2": "https://soundcloud.com/organic-analog",
+    "code": "https://github.com/MattWithers/MattWithers.github.io",
+    "code-sub-1": "https://hak5.org",
+    "code-sub-2": "UnfinishedPage.html",
+    "misc": "DatingSimHTML5/DatingSimPage.html",
+    "misc-sub-1": "HallofProjects/HallofProjects.html"
+  };
+
+  const pxPerSecond = 260;
+  const minDurationMs = 220;
+  const maxDurationMs = 2200;
+  const opacityMs = 220;
+
+  const retractMinMs = 280;
+  const retractMaxMs = 1400;
+
+  const startPointByRoute = new Map();
+
+  function setRouteProgress(routeName, prog01) {
+    const g = routes.get(routeName);
+    if (!g) return;
+    const clamped = Math.max(0, Math.min(1, prog01));
+    g.style.setProperty("--prog", clamped);
   }
 
-  st.addEventListener("click", () => {
-    document.querySelectorAll(".station").forEach(s => s.classList.remove("is-active"));
+  function moveTracker(routeName, x, y) {
+    const g = routes.get(routeName);
+    if (!g) return;
+    const t = g.querySelector(".tracker");
+    if (!t) return;
+    t.setAttribute("transform", `translate(${x} ${y})`);
+  }
+
+  function setMotionDuration(routeName, ms) {
+    const g = routes.get(routeName);
+    if (!g) return;
+    const active = g.querySelector(".line-active");
+    const tracker = g.querySelector(".tracker");
+    const dur = `${ms}ms`;
+    if (active) active.style.transitionDuration = `${opacityMs}ms, ${dur}`;
+    if (tracker) tracker.style.transitionDuration = `${dur}, ${opacityMs}ms`;
+  }
+
+  function closestLengthOnPath(pathEl, targetX, targetY) {
+    const total = pathEl.getTotalLength();
+    const samples = 260;
+    let bestLen = 0;
+    let bestDist2 = Infinity;
+
+    for (let i = 0; i <= samples; i++) {
+      const l = (i / samples) * total;
+      const p = pathEl.getPointAtLength(l);
+      const dx = p.x - targetX;
+      const dy = p.y - targetY;
+      const d2 = dx*dx + dy*dy;
+      if (d2 < bestDist2) { bestDist2 = d2; bestLen = l; }
+    }
+
+    const window = total / samples;
+    let lo = Math.max(0, bestLen - window);
+    let hi = Math.min(total, bestLen + window);
+
+    for (let k = 0; k < 18; k++) {
+      const m1 = lo + (hi - lo) / 3;
+      const m2 = hi - (hi - lo) / 3;
+      const p1 = pathEl.getPointAtLength(m1);
+      const p2 = pathEl.getPointAtLength(m2);
+      const d1 = (p1.x - targetX)**2 + (p1.y - targetY)**2;
+      const d2 = (p2.x - targetX)**2 + (p2.y - targetY)**2;
+      if (d1 < d2) hi = m2; else lo = m1;
+    }
+    return (lo + hi) / 2;
+  }
+
+  function initRouteLengthsAndStationMetrics() {
+    for (const [route, path] of Object.entries(pathByRoute)) {
+      if(!path) continue;
+      const total = path.getTotalLength();
+      const g = routes.get(route);
+      if (g) {
+        g.style.setProperty("--len", total);
+        g.style.setProperty("--prog", 0);
+      }
+      const start = path.getPointAtLength(0);
+      startPointByRoute.set(route, { x: start.x, y: start.y });
+    }
+
+    stations.forEach(st => {
+      const parent = st.dataset.parent || "general";
+      const path = pathByRoute[parent];
+      if (!path) return;
+      const x = Number(st.dataset.x);
+      const y = Number(st.dataset.y);
+      const total = path.getTotalLength();
+      const lenAt = closestLengthOnPath(path, x, y);
+      const prog = total > 0 ? (lenAt / total) : 0;
+      st.dataset.lenAt = lenAt.toFixed(3);
+      st.dataset.prog = prog.toFixed(6);
+    });
+  }
+
+  const lastLenAtByRoute = new Map();
+  let lastActiveRoute = null;
+
+  function computeDurationMs(route, nextLenAt) {
+    const prev = lastLenAtByRoute.get(route);
+    const baseLenAt = (lastActiveRoute === route && typeof prev === "number") ? prev : 0;
+    const delta = Math.abs(nextLenAt - baseLenAt);
+    const pxPerMs = pxPerSecond / 1000;
+    let ms = delta / pxPerMs;
+    ms = Math.max(minDurationMs, Math.min(maxDurationMs, ms));
+    return ms;
+  }
+
+  function computeRetractMs(route) {
+    const prevLenAt = lastLenAtByRoute.get(route);
+    if (typeof prevLenAt !== "number") return retractMinMs;
+    const pxPerMs = pxPerSecond / 1000;
+    let ms = prevLenAt / pxPerMs;
+    ms = Math.max(retractMinMs, Math.min(retractMaxMs, ms));
+    return ms;
+  }
+
+  function retractRoute(routeName) {
+    if (!routeName) return;
+    const g = routes.get(routeName);
+    if (!g) return;
+    if (!g.classList.contains("is-active") && !g.classList.contains("is-leaving")) return;
+
+    const ms = computeRetractMs(routeName);
+    setMotionDuration(routeName, ms);
+
+    g.classList.remove("is-active");
+    g.classList.add("is-leaving");
+    requestAnimationFrame(() => setRouteProgress(routeName, 0));
+
+    window.setTimeout(() => {
+      g.classList.remove("is-leaving");
+      setRouteProgress(routeName, 0);
+    }, ms + 40);
+  }
+
+  function animateToStation(parent, targetProg, targetLenAt, targetX, targetY) {
+    const g = routes.get(parent);
+    if (!g) return;
+
+    if (lastActiveRoute && lastActiveRoute !== parent) {
+      retractRoute(lastActiveRoute);
+    }
+
+    const ms = computeDurationMs(parent, targetLenAt);
+    setMotionDuration(parent, ms);
+
+    if (lastActiveRoute !== parent) {
+      const start = startPointByRoute.get(parent) || { x: targetX, y: targetY };
+      g.classList.add("no-anim");
+      g.classList.add("is-active");
+      setRouteProgress(parent, 0);
+      moveTracker(parent, start.x, start.y);
+      void g.getBoundingClientRect();
+      requestAnimationFrame(() => {
+        g.classList.remove("no-anim");
+        requestAnimationFrame(() => {
+          setRouteProgress(parent, targetProg);
+          moveTracker(parent, targetX, targetY);
+        });
+      });
+    } else {
+      g.classList.add("is-active");
+      setRouteProgress(parent, targetProg);
+      moveTracker(parent, targetX, targetY);
+    }
+
+    lastLenAtByRoute.set(parent, targetLenAt);
+    lastActiveRoute = parent;
+  }
+
+  function showTooltip(st, clientX, clientY) {
+    const t = st.dataset.title || "";
+    if (!tooltip || !t) return;
+    tooltip.textContent = t;
+    const rect = root.getBoundingClientRect();
+    tooltip.style.left = `${clientX - rect.left}px`;
+    tooltip.style.top  = `${clientY - rect.top}px`;
+    tooltip.classList.add("is-visible");
+  }
+  function hideTooltip(){ tooltip && tooltip.classList.remove("is-visible"); }
+
+  function previewStation(st, evt) {
+    const parent = st.dataset.parent || "general";
+    const x      = Number(st.dataset.x);
+    const y      = Number(st.dataset.y);
+    const prog   = Number(st.dataset.prog ?? 0);
+    const lenAt  = Number(st.dataset.lenAt ?? 0);
+    animateToStation(parent, prog, lenAt, x, y);
+    if (evt) showTooltip(st, evt.clientX, evt.clientY);
+  }
+
+  function setActiveStation(st) {
+    stations.forEach(s => s.classList.remove("is-active"));
     st.classList.add("is-active");
-    if (st.dataset.href) window.location.href = st.dataset.href;
+  }
+
+  stations.forEach(st => {
+    if (stationLinks[st.dataset.id]) st.dataset.href = stationLinks[st.dataset.id];
+
+    st.addEventListener("mouseenter", (e) => previewStation(st, e));
+    st.addEventListener("mousemove",  (e) => showTooltip(st, e.clientX, e.clientY));
+    st.addEventListener("mouseleave", hideTooltip);
+    st.addEventListener("focus", (e) => previewStation(st, e));
+    st.addEventListener("blur", hideTooltip);
+
+    st.addEventListener("click", (e) => {
+      e.preventDefault();
+      setActiveStation(st);
+      if (st.dataset.href) window.location.href = st.dataset.href;
+    });
+
+    st.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        setActiveStation(st);
+        if (st.dataset.href) window.location.href = st.dataset.href;
+      }
+    });
   });
-});
+
+  initRouteLengthsAndStationMetrics();
+  const defaultStation = stations.find(s => s.dataset.href) || stations[0];
+  if (defaultStation) setActiveStation(defaultStation);
+})();
 </script>
 
 </body>
