@@ -1090,3 +1090,16 @@ body.bg-night .back-img{
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+
+
+
+/* ===== Guard: keep profile card anchored to the video frame (NOT the page) ===== */
+.back-img{ position: absolute; } /* existing behavior */
+.back-img .video-profile-card{
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+}
