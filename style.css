@@ -759,19 +759,6 @@ body.bg-night .vpc-btn:hover{
 .vpc-portrait:hover .vpc-photo{ transform: scale(1.08); box-shadow: 8px 8px 0 #8d08d0, -8px -8px 0 #ff006f; }
 
 
-/* ===== Subway Menu (overlay only, non-destructive) ===== */
-.subway-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  pointer-events: auto;
-}
-
-.subway-overlay * {
-  box-sizing: border-box;
-}
-
-
 
 /* ===== Subway Map (restored visuals from test13, scoped) ===== */
 @font-face {
@@ -788,15 +775,15 @@ body.bg-night .vpc-btn:hover{
     
 
 .subway-overlay {
-  --bg: #f3f3f3;
-  --ink: #000;
-  --inactive: #d0d0d0;
+  --panel-bg: rgba(255,255,255,0.40);
+  --panel-border: rgba(255,255,255,0.45);
+
+  --bg: rgba(255,255,255,0.55);
+  --ink: rgba(0,0,0,0.95);
+  --inactive: rgba(0,0,0,0.22);
 
   --node-stroke: 4px;
   --line-width: 10px;
-
-  --label-size: 16px;
-  --label-sub-size: 13px;
 
   --general: #F44336;
   --art: #3F51B5;
@@ -821,12 +808,28 @@ body.bg-night .vpc-btn:hover{
   font-family: "Johnston100 W03 Regular", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-.subway-overlay svg {
+.subway-overlay::before{
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 18px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 0;
+}
+
+.subway-overlay svg{
   width: 100%;
   height: auto;
-  display: block;
   max-height: 100%;
   padding: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .subway-overlay .line-base{
@@ -858,15 +861,12 @@ body.bg-night .vpc-btn:hover{
   stroke-width: calc(var(--line-width) - 1px);
   stroke-linecap: round;
   stroke-linejoin: round;
-
   opacity: 0;
   stroke-dasharray: 0 1;
-
   transition-property: opacity, stroke-dasharray;
   transition-timing-function: linear, var(--ease);
   transition-duration: 0.22s, 0.6s;
 }
-
 .subway-overlay .route.is-active .line-active{
   opacity: 1;
   stroke-dasharray: calc(var(--len) * var(--prog)) var(--len);
@@ -885,7 +885,6 @@ body.bg-night .vpc-btn:hover{
 }
 .subway-overlay .route.is-active .tracker{ opacity: 1; }
 .subway-overlay .route.is-leaving .tracker{ opacity: 0; }
-
 .subway-overlay .route.no-anim .line-active,
 .subway-overlay .route.no-anim .tracker{ transition: none !important; }
 
@@ -894,7 +893,6 @@ body.bg-night .vpc-btn:hover{
   stroke: var(--bg);
   stroke-width: 5px;
 }
-
 .subway-overlay .tracker-pulse{
   fill: none;
   stroke: currentColor;
@@ -903,57 +901,32 @@ body.bg-night .vpc-btn:hover{
   transform-origin: center;
   animation: subwayPulse 1.1s infinite ease-out;
 }
-
 @keyframes subwayPulse{
   0%   { transform: scale(0.75); opacity: 0.65; }
   100% { transform: scale(1.8);  opacity: 0; }
 }
 
 .subway-overlay .station-hit{ fill: transparent; cursor: pointer; }
-
-.subway-overlay .station-node{
-  fill: #fff;
-  stroke: var(--ink);
-  stroke-width: var(--node-stroke);
-}
-.subway-overlay .station-node.interchange{
-  stroke-width: calc(var(--node-stroke) + 1px);
-}
-
-.subway-overlay .station-ring{
-  fill: none;
-  stroke: #fff;
-  stroke-width: calc(var(--node-stroke) + 6px);
-  opacity: 0.9;
-}
+.subway-overlay .station-node{ fill: #fff; stroke: var(--ink); stroke-width: var(--node-stroke); }
+.subway-overlay .station-node.interchange{ stroke-width: calc(var(--node-stroke) + 1px); }
+.subway-overlay .station-ring{ fill: none; stroke: rgba(255,255,255,0.9); stroke-width: calc(var(--node-stroke) + 6px); opacity: 0.9; }
 
 .subway-overlay .station-label{
-  font-size: var(--label-size);
+  font-size: 16px;
   paint-order: stroke;
   stroke: var(--bg);
   stroke-width: 6px;
   stroke-linejoin: round;
   user-select:none;
-  fill: #000;
-}
-.subway-overlay .station-label tspan.sub{
-  font-size: var(--label-sub-size);
-  opacity: 0.85;
+  fill: rgba(0,0,0,0.95);
 }
 
 .subway-overlay .station:hover .station-node,
-.subway-overlay .station:focus-visible .station-node{
-  stroke-width: calc(var(--node-stroke) + 1px);
-}
+.subway-overlay .station:focus-visible .station-node{ stroke-width: calc(var(--node-stroke) + 1px); }
 
-/* Active highlight */
-.subway-overlay .station.is-active .station-node{ fill: #000; }
+.subway-overlay .station.is-active .station-node{ fill: rgba(0,0,0,0.95); }
 .subway-overlay .station.is-active .station-label{ font-weight: 700; }
 
-/* Unused stations */
-.subway-overlay .station.station-unused{ opacity: 0; pointer-events: none; }
-
-/* Tooltip */
 .subway-overlay .subway-tooltip{
   position: absolute;
   padding: 6px 10px;
@@ -967,130 +940,29 @@ body.bg-night .vpc-btn:hover{
   pointer-events: none;
   transition: opacity 120ms ease;
   white-space: nowrap;
+  z-index: 2;
 }
 .subway-overlay .subway-tooltip.is-visible{ opacity: 1; }
 
-/* Night mode fades */
-body.bg-night .subway-overlay .line-color{ opacity: 0.35; }
-body.bg-night .subway-overlay .line-base{ opacity: 0.70; }
-body.bg-night .subway-overlay .station-label{ stroke: rgba(15,18,24,0.85); }
-
-
-
-/* ===== Profile card: restore original placement (top-right inside video frame) ===== */
-.back-img { position: absolute; } /* ensure positioned ancestor for absolute children */
-
-.video-profile-card{
-  top: 14px !important;
-  right: 14px !important;
-  left: auto !important;
-  bottom: auto !important;
-  transform: none !important;
-  z-index: 6 !important; /* above subway overlay */
-}
-
-
-
-/* ===== Subway overlay panel + day/night compatibility ===== */
-/* END Subway overlay panel ===== */
-.subway-overlay{
-  /* Default (day) */
-  --panel-bg: rgba(255,255,255,0.40);
-  --panel-border: rgba(255,255,255,0.45);
-
-  /* These drive strokes/fills */
-  --bg: rgba(255,255,255,0.55);        /* label outline color */
-  --ink: rgba(0,0,0,0.95);
-  --inactive: rgba(0,0,0,0.22);
-
-  /* Improve contrast over video */
-  text-shadow: none;
-}
-
-/* Semi-transparent “card” behind the SVG */
-.subway-overlay::before{
-  content: "";
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  right: 10px;
-  bottom: 10px;
-  border-radius: 18px;
-  background: var(--panel-bg);
-  border: 1px solid var(--panel-border);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 0;
-}
-
-/* Keep SVG + tooltip above the panel */
-.subway-overlay svg{ position: relative; z-index: 1; }
-.subway-overlay .subway-tooltip{ z-index: 2; }
-
-/* Night mode: match your site’s bg-night palette */
 body.bg-night .subway-overlay{
   --panel-bg: rgba(15,18,24,0.45);
   --panel-border: rgba(255,255,255,0.12);
-
   --bg: rgba(15,18,24,0.75);
   --ink: rgba(245,245,245,0.95);
   --inactive: rgba(235,238,244,0.22);
 }
+body.bg-night .subway-overlay .station-label{ fill: rgba(245,245,245,0.92); }
+body.bg-night .subway-overlay .station-node{ fill: rgba(15,18,24,0.25); stroke: var(--ink); }
 
-/* Night mode: ensure labels remain readable */
-body.bg-night .subway-overlay .station-label{
-  fill: rgba(245,245,245,0.92);
-}
-
-/* Night mode: station styling */
-body.bg-night .subway-overlay .station-node{
-  fill: rgba(15,18,24,0.25);
-  stroke: var(--ink);
-}
-body.bg-night .subway-overlay .station-ring{
-  stroke: rgba(15,18,24,0.20);
-}
-
-
-
-/* ===== Profile portrait restore ===== */
-.video-profile-card{ z-index: 6 !important; }
-.vpc-portrait{
-  width: 150px !important;
-  height: 150px !important;
-  flex: 0 0 150px !important;
-}
-.vpc-photo{
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-/* END Profile portrait restore ===== */
-
-
-
-
-
-
-
-/* ===== Profile card: top-right CORNER exactly at video frame top-right CORNER ===== */
-.back-img{ position: absolute !important; }
-
+/* ===== Profile card pinned to video top-right corner ===== */
+.back-img { position: absolute; }
 .back-img .video-profile-card{
   position: absolute !important;
-  inset: 0 0 auto auto !important;   /* top:0; right:0; bottom:auto; left:auto */
   top: 0 !important;
   right: 0 !important;
-  bottom: auto !important;
   left: auto !important;
-
-  /* kill any centering transforms from other rules */
-  transform: none !important;
-  translate: 0 0 !important;
-  transform-origin: top right !important;
-
+  bottom: auto !important;
   margin: 0 !important;
-  z-index: 12 !important;
+  transform: none !important;
+  z-index: 10 !important;
 }
