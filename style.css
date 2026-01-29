@@ -846,3 +846,274 @@ body.bg-night .line-color {
   height: auto;
   max-width: 100%;
 }
+
+
+/* ===== Subway Map Colors & Styling (from test13) ===== */
+
+    @font-face {
+      font-family: "Johnston100 W03 Regular";
+      src:
+        url("https://db.onlinewebfonts.com/t/6f9f13ce8ac6971d7c1c21ca9189f7d0.eot"),
+        url("https://db.onlinewebfonts.com/t/6f9f13ce8ac6971d7c1c21ca9189f7d0.eot?#iefix") format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/6f9f13ce8ac6971d7c1c21ca9189f7d0.woff2") format("woff2"),
+        url("https://db.onlinewebfonts.com/t/6f9f13ce8ac6971d7c1c21ca9189f7d0.woff") format("woff"),
+        url("https://db.onlinewebfonts.com/t/6f9f13ce8ac6971d7c1c21ca9189f7d0.ttf") format("truetype"),
+        url("https://db.onlinewebfonts.com/t/6f9f13ce8ac6971d7c1c21ca9189f7d0..subway-overlay svg#Johnston100 W03 Regular") format(".subway-overlay svg");
+    }
+
+    .subway-overlay :root{
+      --bg: #f3f3f3;
+      --ink: #000;
+      --inactive: #d0d0d0;
+
+      --node-stroke: 4px;
+      --line-width: 10px;
+
+      --label-size: 16px;
+      --label-sub-size: 13px;
+
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+
+      --general: #F44336;
+      --art: #3F51B5;
+      --code: #009688;
+      --misc: #FF9800;
+
+      /* ✅ new parallel line color */
+      --parallel: #8E24AA;
+
+      --ease: cubic-bezier(.2,.9,.2,1);
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Johnston100 W03 Regular", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .wrap{
+      width: min(1200px, calc(100vw - 2.5rem));
+      padding: 2rem 0 4.5rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .topbar{
+      display:flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0 0.25rem;
+    }
+
+    .topbar h1{ margin:0; font-size: 1.25rem; letter-spacing: 0.02em; }
+    .topbar .hint{ margin:0; opacity: 0.72; font-size: 0.95rem; }
+
+    .panel{
+      display:grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .map-card{
+      background: rgba(255,255,255,0.7);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 1rem;
+      overflow: hidden;
+    }
+
+    .content{
+      background: rgba(255,255,255,0.7);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 1rem 1.1rem;
+    }
+
+    .content h2{ margin: 0 0 0.35rem; font-size: 1.1rem; }
+    .content p{ margin: 0; opacity: 0.85; line-height: 1.4; }
+
+    .legend{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1rem;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed rgba(0,0,0,0.12);
+    }
+
+    .legend-item{
+      display:flex;
+      align-items:center;
+      gap:0.5rem;
+      font-size: 0.95rem;
+      user-select:none;
+      opacity: 0.9;
+    }
+
+    .swatch{
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      box-shadow: 0 0 0 3px var(--bg);
+    }
+
+    .subway-overlay svg{ width: 100%; height: auto; display:block; }
+
+    .subway-overlay .line-base{
+      fill:none;
+      stroke: var(--inactive);
+      stroke-width: var(--line-width);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 2px 0 rgba(0,0,0,0.10));
+      opacity: 0.95;
+    }
+
+    .subway-overlay .line-color{
+      fill:none;
+      stroke-width: calc(var(--line-width) - 2px);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.55;
+    }
+    .subway-overlay .line-color.general{ stroke: var(--general); }
+    .subway-overlay .line-color.art{ stroke: var(--art); }
+    .subway-overlay .line-color.code{ stroke: var(--code); }
+    .subway-overlay .line-color.misc{ stroke: var(--misc); }
+    .subway-overlay .line-color.parallel{ stroke: var(--parallel); }
+
+    /* Active overlay line (black) */
+    .subway-overlay .line-active{
+      fill:none;
+      stroke: var(--ink);
+      stroke-width: calc(var(--line-width) - 1px);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+
+      opacity: 0;
+      stroke-dasharray: 0 1;
+
+      transition-property: opacity, stroke-dasharray;
+      transition-timing-function: linear, var(--ease);
+      transition-duration: 0.22s, 0.6s; /* dash duration overridden dynamically */
+    }
+
+    .subway-overlay .route.is-active .subway-overlay .line-active{
+      opacity: 1;
+      stroke-dasharray: calc(var(--len) * var(--prog)) var(--len);
+    }
+
+    /* ✅ Smooth retract: when a route is “leaving” keep it visible and animate prog->0 */
+    .subway-overlay .route.is-leaving .subway-overlay .line-active{
+      opacity: 1;
+      stroke-dasharray: calc(var(--len) * var(--prog)) var(--len);
+    }
+
+    .subway-overlay .tracker{
+      opacity: 0;
+      pointer-events: none;
+
+      transition-property: transform, opacity;
+      transition-timing-function: var(--ease), linear;
+      transition-duration: 0.6s, 0.22s; /* transform duration overridden dynamically */
+    }
+    .subway-overlay .route.is-active .subway-overlay .tracker{ opacity: 1; }
+
+    /* During retract, fade tracker out gently */
+    .subway-overlay .route.is-leaving .subway-overlay .tracker{
+      opacity: 0;
+    }
+
+    /* no-anim setup state (prevents flash on first hover / route switch) */
+    .subway-overlay .route.no-anim .subway-overlay .line-active,
+    .subway-overlay .route.no-anim .subway-overlay .tracker{
+      transition: none !important;
+    }
+
+    .subway-overlay .tracker-dot{
+      fill: currentColor;
+      stroke: var(--bg);
+      stroke-width: 5px;
+    }
+
+    .subway-overlay .tracker-pulse{
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 4px;
+      opacity: 0.8;
+      transform-origin: center;
+      animation: pulse 1.1s infinite ease-out;
+    }
+
+    @keyframes pulse{
+      0%   { transform: scale(0.75); opacity: 0.65; }
+      100% { transform: scale(1.8);  opacity: 0; }
+    }
+
+    .subway-overlay .station-hit{ fill: transparent; cursor: pointer; }
+
+    .subway-overlay .subway-overlay .station-node{
+      fill: #fff;
+      stroke: var(--ink);
+      stroke-width: var(--node-stroke);
+    }
+
+    .subway-overlay .subway-overlay .station-node.interchange{
+      stroke-width: calc(var(--node-stroke) + 1px);
+    }
+
+    .subway-overlay .subway-overlay .station-ring{
+      fill: none;
+      stroke: #fff;
+      stroke-width: calc(var(--node-stroke) + 6px);
+      opacity: 0.9;
+    }
+
+    .subway-overlay .subway-overlay .station-label{
+      font-size: var(--label-size);
+      paint-order: stroke;
+      stroke: var(--bg);
+      stroke-width: 6px;
+      stroke-linejoin: round;
+      user-select:none;
+    }
+
+    .subway-overlay .subway-overlay .station-label tspan.sub{
+      font-size: var(--label-sub-size);
+      opacity: 0.85;
+    }
+
+    .subway-overlay .station:hover .subway-overlay .subway-overlay .station-node,
+    .subway-overlay .station:focus-visible .subway-overlay .subway-overlay .station-node{
+      stroke-width: calc(var(--node-stroke) + 1px);
+    }
+
+    .sticky{
+      position: fixed;
+      left: 2rem;
+      right: 2rem;
+      bottom: 1rem;
+      text-align: center;
+      overflow-wrap: anywhere;
+      opacity: 0.9;
+    }
+
+    .sticky a{
+      color: #000;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(0,0,0,0.35);
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 980px){
+      .panel{ grid-template-columns: 1fr; }
+    }
+  
