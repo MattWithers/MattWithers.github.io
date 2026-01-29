@@ -1103,3 +1103,23 @@ body.bg-night .subway-overlay .station-ring{
 }
 
 /* If you want it inset from the border, change top/right to 14px. */
+
+
+
+/* ===== TRUE video-corner pin (accounts for .back-img border) ===== */
+.back-img{
+  position: relative !important;
+  --video-border: 4px; /* matches .back-img border: 4px solid ... */
+}
+
+/* Pin the card's TOP-RIGHT CORNER to the video's TOP-RIGHT CORNER (outer edge) */
+.video-profile-card{
+  position: absolute !important;
+  top: calc(-1 * var(--video-border)) !important;
+  right: calc(-1 * var(--video-border)) !important;
+  left: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  z-index: 12 !important;
+}
