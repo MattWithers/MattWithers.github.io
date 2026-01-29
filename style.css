@@ -974,3 +974,17 @@ body.bg-night .vpc-btn:hover{
 body.bg-night .subway-overlay .line-color{ opacity: 0.35; }
 body.bg-night .subway-overlay .line-base{ opacity: 0.70; }
 body.bg-night .subway-overlay .station-label{ stroke: rgba(15,18,24,0.85); }
+
+
+
+/* ===== Profile card: restore original placement (top-right inside video frame) ===== */
+.back-img { position: absolute; } /* ensure positioned ancestor for absolute children */
+
+.video-profile-card{
+  top: 14px !important;
+  right: 14px !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  z-index: 6 !important; /* above subway overlay */
+}
