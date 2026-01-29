@@ -988,3 +988,83 @@ body.bg-night .subway-overlay .station-label{ stroke: rgba(15,18,24,0.85); }
   transform: none !important;
   z-index: 6 !important; /* above subway overlay */
 }
+
+
+
+/* ===== Subway overlay panel + day/night compatibility ===== */
+/* END Subway overlay panel ===== */
+.subway-overlay{
+  /* Default (day) */
+  --panel-bg: rgba(255,255,255,0.40);
+  --panel-border: rgba(255,255,255,0.45);
+
+  /* These drive strokes/fills */
+  --bg: rgba(255,255,255,0.55);        /* label outline color */
+  --ink: rgba(0,0,0,0.95);
+  --inactive: rgba(0,0,0,0.22);
+
+  /* Improve contrast over video */
+  text-shadow: none;
+}
+
+/* Semi-transparent “card” behind the SVG */
+.subway-overlay::before{
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 18px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 0;
+}
+
+/* Keep SVG + tooltip above the panel */
+.subway-overlay svg{ position: relative; z-index: 1; }
+.subway-overlay .subway-tooltip{ z-index: 2; }
+
+/* Night mode: match your site’s bg-night palette */
+body.bg-night .subway-overlay{
+  --panel-bg: rgba(15,18,24,0.45);
+  --panel-border: rgba(255,255,255,0.12);
+
+  --bg: rgba(15,18,24,0.75);
+  --ink: rgba(245,245,245,0.95);
+  --inactive: rgba(235,238,244,0.22);
+}
+
+/* Night mode: ensure labels remain readable */
+body.bg-night .subway-overlay .station-label{
+  fill: rgba(245,245,245,0.92);
+}
+
+/* Night mode: station styling */
+body.bg-night .subway-overlay .station-node{
+  fill: rgba(15,18,24,0.25);
+  stroke: var(--ink);
+}
+body.bg-night .subway-overlay .station-ring{
+  stroke: rgba(15,18,24,0.20);
+}
+
+
+
+/* ===== Profile portrait restore ===== */
+.video-profile-card{ z-index: 6 !important; }
+.vpc-portrait{
+  width: 150px !important;
+  height: 150px !important;
+  flex: 0 0 150px !important;
+}
+.vpc-photo{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+/* END Profile portrait restore ===== */
