@@ -804,3 +804,45 @@ body.bg-night .vpc-btn:hover{
 .video-profile-card{
   z-index: 6;
 }
+
+
+/* ===== Subway enhancements ===== */
+
+/* Highlight active station */
+.station.is-active .station-node {
+  fill: #000;
+}
+.station.is-active .station-label {
+  font-weight: bold;
+}
+
+/* Tooltips */
+.station::after{
+  content: attr(data-title);
+  position: absolute;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -140%);
+  transition: opacity .2s ease;
+  white-space: nowrap;
+}
+.station:hover::after{
+  opacity: 1;
+}
+
+/* Fade inactive lines */
+body.bg-night .line-color {
+  opacity: 0.2;
+}
+
+/* Responsive map */
+.subway-overlay svg {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}

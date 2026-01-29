@@ -1019,5 +1019,35 @@ function vpcToast(msg) {
       })();
     </script>
 
-  </body>
+  
+<script>
+const stationLinks = {
+  "general": "Resume - Matthew Withers - Jan 20th 2026.pdf",
+  "general-sub-1": "https://www.linkedin.com/in/matthew-withers-hr/",
+  "general-sub-2": "https://www.youtube.com/@MatthewJamesWithers",
+  "art": "rendergallery.html",
+  "art-sub-1": "modelgallery.html",
+  "art-sub-2": "https://soundcloud.com/organic-analog",
+  "code": "https://github.com/MattWithers/MattWithers.github.io",
+  "code-sub-1": "https://hak5.org",
+  "code-sub-2": "UnfinishedPage.html",
+  "misc": "DatingSimHTML5/DatingSimPage.html",
+  "misc-sub-1": "HallofProjects/HallofProjects.html"
+};
+
+document.querySelectorAll(".station").forEach(st => {
+  const id = st.dataset.id;
+  if (stationLinks[id]) {
+    st.dataset.href = stationLinks[id];
+  }
+
+  st.addEventListener("click", () => {
+    document.querySelectorAll(".station").forEach(s => s.classList.remove("is-active"));
+    st.classList.add("is-active");
+    if (st.dataset.href) window.location.href = st.dataset.href;
+  });
+});
+</script>
+
+</body>
 </html>
