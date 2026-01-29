@@ -770,3 +770,37 @@ body.bg-night .vpc-btn:hover{
 .subway-overlay * {
   box-sizing: border-box;
 }
+
+
+/* ===== Subway menu overlay (video only) ===== */
+.subway-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 66.66%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subway-overlay svg{
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+/* Remove test13 UI chrome */
+.subway-overlay .topbar,
+.subway-overlay .content,
+.subway-overlay .legend,
+.subway-overlay .sticky{
+  display: none !important;
+}
+
+/* Ensure it never overlaps the profile card */
+.video-profile-card{
+  z-index: 6;
+}

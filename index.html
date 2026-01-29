@@ -89,13 +89,207 @@ Give Credit were it's due, The_Bugs
       </video>
 
 <!-- ===== Subway Menu Overlay ===== -->
-<div class="subway-overlay">
 
-  <div class="wrap">
-    <div class="topbar">
-      <h1>Subway Map Navigation</h1>
-      <p class="hint">New line runs parallel under Code • Switching lines retracts the previous line smoothly</p>
-    </div>
+<!-- ===== Subway Menu Overlay ===== -->
+<div class="subway-overlay">
+<svg viewBox="0 0 1200 520" aria-label="Interactive subway map">
+          <!-- ROUTES -->
+          <g class="route" data-route="general" style="--prog: 0; --len: 1;">
+            <path id="path-general" class="line-base" d="M120 110 H640 Q700 110 700 170 V210 H940" />
+            <path class="line-color general"       d="M120 110 H640 Q700 110 700 170 V210 H940" />
+            <path class="line-active"              d="M120 110 H640 Q700 110 700 170 V210 H940" />
+            <g class="tracker" style="color: var(--general);" transform="translate(120 110)">
+              <circle class="tracker-pulse" r="10"></circle>
+              <circle class="tracker-dot" r="8"></circle>
+            </g>
+          </g>
+
+          <g class="route" data-route="art" style="--prog: 0; --len: 1;">
+            <path id="path-art" class="line-base" d="M460 60 V210 H700" />
+            <path class="line-color art"         d="M460 60 V210 H700" />
+            <path class="line-active"            d="M460 60 V210 H700" />
+            <g class="tracker" style="color: var(--art);" transform="translate(460 60)">
+              <circle class="tracker-pulse" r="10"></circle>
+              <circle class="tracker-dot" r="8"></circle>
+            </g>
+          </g>
+
+          <g class="route" data-route="code" style="--prog: 0; --len: 1;">
+            <path id="path-code" class="line-base" d="M140 360 H620 Q660 360 660 320 V260 H700" />
+            <path class="line-color code"        d="M140 360 H620 Q660 360 660 320 V260 H700" />
+            <path class="line-active"             d="M140 360 H620 Q660 360 660 320 V260 H700" />
+            <g class="tracker" style="color: var(--code);" transform="translate(140 360)">
+              <circle class="tracker-pulse" r="10"></circle>
+              <circle class="tracker-dot" r="8"></circle>
+            </g>
+          </g>
+
+          <!-- ✅ NEW PARALLEL LINE (horizontal, under Code line) -->
+          <g class="route" data-route="parallel" style="--prog: 0; --len: 1;">
+            <path id="path-parallel" class="line-base" d="M180 420 H740" />
+            <path class="line-color parallel"    d="M180 420 H740" />
+            <path class="line-active"            d="M180 420 H740" />
+            <g class="tracker" style="color: var(--parallel);" transform="translate(180 420)">
+              <circle class="tracker-pulse" r="10"></circle>
+              <circle class="tracker-dot" r="8"></circle>
+            </g>
+          </g>
+
+          <g class="route" data-route="misc" style="--prog: 0; --len: 1;">
+            <path id="path-misc" class="line-base" d="M940 70 V420" />
+            <path class="line-color misc"        d="M940 70 V420" />
+            <path class="line-active"             d="M940 70 V420" />
+            <g class="tracker" style="color: var(--misc);" transform="translate(940 70)">
+              <circle class="tracker-pulse" r="10"></circle>
+              <circle class="tracker-dot" r="8"></circle>
+            </g>
+          </g>
+
+          <!-- STATIONS -->
+          <!-- General -->
+          <g class="station" data-id="general" data-title="General" data-parent="general" data-x="120" data-y="110" tabindex="0">
+            <circle class="station-ring" cx="120" cy="110" r="14"></circle>
+            <circle class="station-node" cx="120" cy="110" r="10"></circle>
+            <circle class="station-hit" cx="120" cy="110" r="26"></circle>
+            <text class="station-label" x="120" y="78" text-anchor="middle">General</text>
+          </g>
+          <g class="station" data-id="general-sub-1" data-title="General • Sub 1" data-parent="general" data-x="320" data-y="110" tabindex="0">
+            <circle class="station-ring" cx="320" cy="110" r="14"></circle>
+            <circle class="station-node" cx="320" cy="110" r="10"></circle>
+            <circle class="station-hit" cx="320" cy="110" r="26"></circle>
+            <text class="station-label" x="320" y="78" text-anchor="middle">General <tspan class="sub">• Sub 1</tspan></text>
+          </g>
+          <g class="station" data-id="general-sub-2" data-title="General • Sub 2" data-parent="general" data-x="520" data-y="110" tabindex="0">
+            <circle class="station-ring" cx="520" cy="110" r="14"></circle>
+            <circle class="station-node" cx="520" cy="110" r="10"></circle>
+            <circle class="station-hit" cx="520" cy="110" r="26"></circle>
+            <text class="station-label" x="520" y="78" text-anchor="middle">General <tspan class="sub">• Sub 2</tspan></text>
+          </g>
+          <g class="station" data-id="central" data-title="Central Interchange" data-parent="general" data-x="700" data-y="210" tabindex="0">
+            <circle class="station-ring" cx="700" cy="210" r="18"></circle>
+            <circle class="station-node interchange" cx="700" cy="210" r="12"></circle>
+            <circle class="station-hit" cx="700" cy="210" r="30"></circle>
+            <text class="station-label" x="740" y="214" text-anchor="start">Central <tspan class="sub">Interchange</tspan></text>
+          </g>
+          <g class="station" data-id="general-east" data-title="General • East" data-parent="general" data-x="860" data-y="210" tabindex="0">
+            <circle class="station-ring" cx="860" cy="210" r="14"></circle>
+            <circle class="station-node" cx="860" cy="210" r="10"></circle>
+            <circle class="station-hit" cx="860" cy="210" r="26"></circle>
+            <text class="station-label" x="860" y="178" text-anchor="middle">General <tspan class="sub">• East</tspan></text>
+          </g>
+
+          <!-- Art -->
+          <g class="station" data-id="art" data-title="Art" data-parent="art" data-x="460" data-y="60" tabindex="0">
+            <circle class="station-ring" cx="460" cy="60" r="14"></circle>
+            <circle class="station-node" cx="460" cy="60" r="10"></circle>
+            <circle class="station-hit" cx="460" cy="60" r="26"></circle>
+            <text class="station-label" x="460" y="28" text-anchor="middle">Art</text>
+          </g>
+          <g class="station" data-id="art-sub-1" data-title="Art • Sub 1" data-parent="art" data-x="460" data-y="120" tabindex="0">
+            <circle class="station-ring" cx="460" cy="120" r="14"></circle>
+            <circle class="station-node" cx="460" cy="120" r="10"></circle>
+            <circle class="station-hit" cx="460" cy="120" r="26"></circle>
+            <text class="station-label" x="420" y="124" text-anchor="end">Art <tspan class="sub">• Sub 1</tspan></text>
+          </g>
+          <g class="station" data-id="art-sub-2" data-title="Art • Sub 2" data-parent="art" data-x="460" data-y="180" tabindex="0">
+            <circle class="station-ring" cx="460" cy="180" r="14"></circle>
+            <circle class="station-node" cx="460" cy="180" r="10"></circle>
+            <circle class="station-hit" cx="460" cy="180" r="26"></circle>
+            <text class="station-label" x="420" y="184" text-anchor="end">Art <tspan class="sub">• Sub 2</tspan></text>
+          </g>
+          <g class="station" data-id="art-sub-3" data-title="Art • Sub 3" data-parent="art" data-x="460" data-y="240" tabindex="0">
+            <circle class="station-ring" cx="460" cy="240" r="14"></circle>
+            <circle class="station-node" cx="460" cy="240" r="10"></circle>
+            <circle class="station-hit" cx="460" cy="240" r="26"></circle>
+            <text class="station-label" x="420" y="244" text-anchor="end">Art <tspan class="sub">• Sub 3</tspan></text>
+          </g>
+
+          <!-- Code -->
+          <g class="station" data-id="code" data-title="Code" data-parent="code" data-x="140" data-y="360" tabindex="0">
+            <circle class="station-ring" cx="140" cy="360" r="14"></circle>
+            <circle class="station-node" cx="140" cy="360" r="10"></circle>
+            <circle class="station-hit" cx="140" cy="360" r="26"></circle>
+            <text class="station-label" x="140" y="328" text-anchor="middle">Code</text>
+          </g>
+          <g class="station" data-id="code-sub-1" data-title="Code • Sub 1" data-parent="code" data-x="280" data-y="360" tabindex="0">
+            <circle class="station-ring" cx="280" cy="360" r="14"></circle>
+            <circle class="station-node" cx="280" cy="360" r="10"></circle>
+            <circle class="station-hit" cx="280" cy="360" r="26"></circle>
+            <text class="station-label" x="280" y="328" text-anchor="middle">Code <tspan class="sub">• Sub 1</tspan></text>
+          </g>
+          <g class="station" data-id="code-sub-2" data-title="Code • Sub 2" data-parent="code" data-x="420" data-y="360" tabindex="0">
+            <circle class="station-ring" cx="420" cy="360" r="14"></circle>
+            <circle class="station-node" cx="420" cy="360" r="10"></circle>
+            <circle class="station-hit" cx="420" cy="360" r="26"></circle>
+            <text class="station-label" x="420" y="328" text-anchor="middle">Code <tspan class="sub">• Sub 2</tspan></text>
+          </g>
+          <g class="station" data-id="code-sub-3" data-title="Code • Sub 3" data-parent="code" data-x="560" data-y="360" tabindex="0">
+            <circle class="station-ring" cx="560" cy="360" r="14"></circle>
+            <circle class="station-node" cx="560" cy="360" r="10"></circle>
+            <circle class="station-hit" cx="560" cy="360" r="26"></circle>
+            <text class="station-label" x="560" y="328" text-anchor="middle">Code <tspan class="sub">• Sub 3</tspan></text>
+          </g>
+          <g class="station" data-id="code-sub-4" data-title="Code • Sub 4" data-parent="code" data-x="660" data-y="320" tabindex="0">
+            <circle class="station-ring" cx="660" cy="320" r="14"></circle>
+            <circle class="station-node" cx="660" cy="320" r="10"></circle>
+            <circle class="station-hit" cx="660" cy="320" r="26"></circle>
+            <text class="station-label" x="660" y="288" text-anchor="middle">Code <tspan class="sub">• Sub 4</tspan></text>
+          </g>
+
+          <!-- Parallel line stops -->
+          <g class="station" data-id="parallel" data-title="Parallel" data-parent="parallel" data-x="180" data-y="420" tabindex="0">
+            <circle class="station-ring" cx="180" cy="420" r="14"></circle>
+            <circle class="station-node" cx="180" cy="420" r="10"></circle>
+            <circle class="station-hit" cx="180" cy="420" r="26"></circle>
+            <text class="station-label" x="180" y="388" text-anchor="middle">Parallel</text>
+          </g>
+          <g class="station" data-id="parallel-sub-1" data-title="Parallel • Sub 1" data-parent="parallel" data-x="340" data-y="420" tabindex="0">
+            <circle class="station-ring" cx="340" cy="420" r="14"></circle>
+            <circle class="station-node" cx="340" cy="420" r="10"></circle>
+            <circle class="station-hit" cx="340" cy="420" r="26"></circle>
+            <text class="station-label" x="340" y="388" text-anchor="middle">Parallel <tspan class="sub">• Sub 1</tspan></text>
+          </g>
+          <g class="station" data-id="parallel-sub-2" data-title="Parallel • Sub 2" data-parent="parallel" data-x="500" data-y="420" tabindex="0">
+            <circle class="station-ring" cx="500" cy="420" r="14"></circle>
+            <circle class="station-node" cx="500" cy="420" r="10"></circle>
+            <circle class="station-hit" cx="500" cy="420" r="26"></circle>
+            <text class="station-label" x="500" y="388" text-anchor="middle">Parallel <tspan class="sub">• Sub 2</tspan></text>
+          </g>
+          <g class="station" data-id="parallel-sub-3" data-title="Parallel • Sub 3" data-parent="parallel" data-x="660" data-y="420" tabindex="0">
+            <circle class="station-ring" cx="660" cy="420" r="14"></circle>
+            <circle class="station-node" cx="660" cy="420" r="10"></circle>
+            <circle class="station-hit" cx="660" cy="420" r="26"></circle>
+            <text class="station-label" x="660" y="388" text-anchor="middle">Parallel <tspan class="sub">• Sub 3</tspan></text>
+          </g>
+
+          <!-- Misc -->
+          <g class="station" data-id="misc" data-title="Miscellaneous" data-parent="misc" data-x="940" data-y="70" tabindex="0">
+            <circle class="station-ring" cx="940" cy="70" r="14"></circle>
+            <circle class="station-node" cx="940" cy="70" r="10"></circle>
+            <circle class="station-hit" cx="940" cy="70" r="26"></circle>
+            <text class="station-label" x="940" y="38" text-anchor="middle">Misc</text>
+          </g>
+          <g class="station" data-id="misc-sub-1" data-title="Misc • Sub 1" data-parent="misc" data-x="940" data-y="300" tabindex="0">
+            <circle class="station-ring" cx="940" cy="300" r="14"></circle>
+            <circle class="station-node" cx="940" cy="300" r="10"></circle>
+            <circle class="station-hit" cx="940" cy="300" r="26"></circle>
+            <text class="station-label" x="980" y="304" text-anchor="start">Misc <tspan class="sub">• Sub 1</tspan></text>
+          </g>
+          <g class="station" data-id="misc-sub-2" data-title="Misc • Sub 2" data-parent="misc" data-x="940" data-y="360" tabindex="0">
+            <circle class="station-ring" cx="940" cy="360" r="14"></circle>
+            <circle class="station-node" cx="940" cy="360" r="10"></circle>
+            <circle class="station-hit" cx="940" cy="360" r="26"></circle>
+            <text class="station-label" x="980" y="364" text-anchor="start">Misc <tspan class="sub">• Sub 2</tspan></text>
+          </g>
+          <g class="station" data-id="misc-sub-3" data-title="Misc • Sub 3" data-parent="misc" data-x="940" data-y="420" tabindex="0">
+            <circle class="station-ring" cx="940" cy="420" r="14"></circle>
+            <circle class="station-node" cx="940" cy="420" r="10"></circle>
+            <circle class="station-hit" cx="940" cy="420" r="26"></circle>
+            <text class="station-label" x="980" y="424" text-anchor="start">Misc <tspan class="sub">• Sub 3</tspan></text>
+          </g>
+        </svg>
+</div>
+
 
     <div class="panel">
       <div class="map-card" role="region" aria-label="Subway map">
