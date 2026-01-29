@@ -757,3 +757,16 @@ body.bg-night .vpc-btn:hover{
 }
 
 .vpc-portrait:hover .vpc-photo{ transform: scale(1.08); box-shadow: 8px 8px 0 #8d08d0, -8px -8px 0 #ff006f; }
+
+
+/* ===== Subway Menu (overlay only, non-destructive) ===== */
+.subway-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: auto;
+}
+
+.subway-overlay * {
+  box-sizing: border-box;
+}
