@@ -1068,3 +1068,20 @@ body.bg-night .subway-overlay .station-ring{
   margin: 0 !important;
 }
 /* END Profile portrait restore ===== */
+
+
+
+/* ===== FORCE profile card to top-right of video frame ===== */
+.back-img{
+  position: relative !important; /* anchor for absolute children */
+}
+
+.video-profile-card{
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  z-index: 10 !important;
+}
