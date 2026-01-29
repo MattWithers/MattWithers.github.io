@@ -759,15 +759,18 @@ body.bg-night .vpc-btn:hover{
 .vpc-portrait:hover .vpc-photo{ transform: scale(1.08); box-shadow: 8px 8px 0 #8d08d0, -8px -8px 0 #ff006f; }
 
 
-
-/* === Pin profile card to the VIDEO frame (not the page) === */
-#back-img{ position: absolute; } /* keep your existing layout; ensures containing block */
-#back-img .video-profile-card{
+/* ===== Subway Menu (overlay only, non-destructive) ===== */
+.subway-overlay {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  transform: none !important;
+  inset: 0;
+  z-index: 5;
+  pointer-events: auto;
 }
+
+.subway-overlay * {
+  box-sizing: border-box;
+}
+
 
 
 /* ===== Subway Map (restored visuals from test13, scoped) ===== */
@@ -974,20 +977,6 @@ body.bg-night .subway-overlay .station-label{ stroke: rgba(15,18,24,0.85); }
 
 
 
-/* ===== Profile card: restore original placement (top-right inside video frame) ===== */
-.back-img { position: absolute; } /* ensure positioned ancestor for absolute children */
-
-.video-profile-card{
-  top: 14px !important;
-  right: 14px !important;
-  left: auto !important;
-  bottom: auto !important;
-  transform: none !important;
-  z-index: 6 !important; /* above subway overlay */
-}
-
-
-
 /* ===== Subway overlay panel + day/night compatibility ===== */
 /* END Subway overlay panel ===== */
 .subway-overlay{
@@ -1068,17 +1057,36 @@ body.bg-night .subway-overlay .station-ring{
 
 
 
-/* ===== Match profile card padding & transparency to subway panel ===== */
+/* ===== Profile card: pinned to VIDEO top-right (robust) ===== */
+.back-img{
+  position: absolute;           /* keep your original frame behavior */
+}
+
+/* Ensure the card is anchored to the video frame, not the page */
 .back-img .video-profile-card{
+  position: absolute !important;
   top: 10px !important;
   right: 10px !important;
+  left: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  z-index: 12 !important;       /* above subway overlay */
+}
 
-  background: var(--panel-bg, rgba(255,255,255,0.40)) !important;
-  border: 1px solid var(--panel-border, rgba(255,255,255,0.45)) !important;
+/* Give the profile card the SAME glass look as the subway panel */
+.back-img{
+  --panel-bg: rgba(255,255,255,0.40);
+  --panel-border: rgba(255,255,255,0.45);
+}
+body.bg-night .back-img{
+  --panel-bg: rgba(15,18,24,0.45);
+  --panel-border: rgba(255,255,255,0.12);
+}
+
+.back-img .video-profile-card{
+  background: var(--panel-bg) !important;
+  border: 1px solid var(--panel-border) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-body.bg-night .back-img .video-profile-card{
-  background: var(--panel-bg, rgba(15,18,24,0.45)) !important;
-  border-color: var(--panel-border, rgba(255,255,255,0.12)) !important;
 }
