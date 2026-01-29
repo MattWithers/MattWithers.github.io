@@ -1071,52 +1071,16 @@ body.bg-night .subway-overlay .station-ring{
 
 
 
-/* ===== FORCE profile card to top-right of video frame ===== */
+/* ===== Profile card: pin to TOP-RIGHT of the VIDEO FRAME ===== */
+/* Keep .back-img as your original absolute-positioned frame; it's still a positioned ancestor. */
 .back-img{
-  position: relative !important; /* anchor for absolute children */
+  position: absolute !important; /* restore original behavior */
 }
-
-.video-profile-card{
-  position: absolute !important;
-  top: 14px !important;
-  right: 14px !important;
-  left: auto !important;
-  bottom: auto !important;
-  transform: none !important;
-  z-index: 10 !important;
-}
-
-
-
-/* ===== FINAL: pin profile card corner to video corner ===== */
-.back-img{ position: relative !important; }
 
 .video-profile-card{
   position: absolute !important;
   top: 0 !important;
   right: 0 !important;
-  left: auto !important;
-  bottom: auto !important;
-  margin: 0 !important;
-  transform: none !important;
-  z-index: 12 !important;
-}
-
-/* If you want it inset from the border, change top/right to 14px. */
-
-
-
-/* ===== TRUE video-corner pin (accounts for .back-img border) ===== */
-.back-img{
-  position: relative !important;
-  --video-border: 4px; /* matches .back-img border: 4px solid ... */
-}
-
-/* Pin the card's TOP-RIGHT CORNER to the video's TOP-RIGHT CORNER (outer edge) */
-.video-profile-card{
-  position: absolute !important;
-  top: calc(-1 * var(--video-border)) !important;
-  right: calc(-1 * var(--video-border)) !important;
   left: auto !important;
   bottom: auto !important;
   margin: 0 !important;
