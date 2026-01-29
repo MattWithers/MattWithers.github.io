@@ -760,209 +760,24 @@ body.bg-night .vpc-btn:hover{
 
 
 
-/* ===== Subway Map (restored visuals from test13, scoped) ===== */
-@font-face {
-      font-family: "Johnston100 W03 Regular";
-      src:
-        url("https://db.onlinewebfonts.com/t/6f9f13ce8ac6971d7c1c21ca9189f7d0.eot"),
-        url("https://db.onlinewebfonts.com/t/6f9f13ce8ac6971d7c1c21ca9189f7d0.eot?#iefix") format("embedded-opentype"),
-        url("https://db.onlinewebfonts.com/t/6f9f13ce8ac6971d7c1c21ca9189f7d0.woff2") format("woff2"),
-        url("https://db.onlinewebfonts.com/t/6f9f13ce8ac6971d7c1c21ca9189f7d0.woff") format("woff"),
-        url("https://db.onlinewebfonts.com/t/6f9f13ce8ac6971d7c1c21ca9189f7d0.ttf") format("truetype"),
-        url("https://db.onlinewebfonts.com/t/6f9f13ce8ac6971d7c1c21ca9189f7d0.svg#Johnston100 W03 Regular") format("svg");
-    }
-
-    
-
-.subway-overlay {
-  --panel-bg: rgba(255,255,255,0.40);
-  --panel-border: rgba(255,255,255,0.45);
-
-  --bg: rgba(255,255,255,0.55);
-  --ink: rgba(0,0,0,0.95);
-  --inactive: rgba(0,0,0,0.22);
-
-  --node-stroke: 4px;
-  --line-width: 10px;
-
-  --general: #F44336;
-  --art: #3F51B5;
-  --code: #009688;
-  --misc: #FF9800;
-  --parallel: #8E24AA;
-
-  --ease: cubic-bezier(.2,.9,.2,1);
-
+/* === Pin profile card to the VIDEO frame (not the page) === */
+#back-img{ position: absolute; } /* keep your existing layout; ensures containing block */
+#back-img .video-profile-card{
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 66.66%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-family: "Johnston100 W03 Regular", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  top: 14px;
+  right: 14px;
+  transform: none !important;
 }
 
-.subway-overlay::before{
-  content: "";
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  right: 10px;
-  bottom: 10px;
-  border-radius: 18px;
-  background: var(--panel-bg);
-  border: 1px solid var(--panel-border);
+
+
+/* ===== Match profile card padding & transparency to subway panel ===== */
+.back-img .video-profile-card{
+  top: 10px !important;
+  right: 10px !important;
+
+  background: var(--panel-bg, rgba(255,255,255,0.40)) !important;
+  border: 1px solid var(--panel-border, rgba(255,255,255,0.45)) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  z-index: 0;
-}
-
-.subway-overlay svg{
-  width: 100%;
-  height: auto;
-  max-height: 100%;
-  padding: 10px;
-  position: relative;
-  z-index: 1;
-}
-
-.subway-overlay .line-base{
-  fill:none;
-  stroke: var(--inactive);
-  stroke-width: var(--line-width);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  filter: drop-shadow(0 2px 0 rgba(0,0,0,0.10));
-  opacity: 0.95;
-}
-
-.subway-overlay .line-color{
-  fill:none;
-  stroke-width: calc(var(--line-width) - 2px);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  opacity: 0.55;
-}
-.subway-overlay .line-color.general{ stroke: var(--general); }
-.subway-overlay .line-color.art{ stroke: var(--art); }
-.subway-overlay .line-color.code{ stroke: var(--code); }
-.subway-overlay .line-color.misc{ stroke: var(--misc); }
-.subway-overlay .line-color.parallel{ stroke: var(--parallel); }
-
-.subway-overlay .line-active{
-  fill:none;
-  stroke: var(--ink);
-  stroke-width: calc(var(--line-width) - 1px);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  opacity: 0;
-  stroke-dasharray: 0 1;
-  transition-property: opacity, stroke-dasharray;
-  transition-timing-function: linear, var(--ease);
-  transition-duration: 0.22s, 0.6s;
-}
-.subway-overlay .route.is-active .line-active{
-  opacity: 1;
-  stroke-dasharray: calc(var(--len) * var(--prog)) var(--len);
-}
-.subway-overlay .route.is-leaving .line-active{
-  opacity: 1;
-  stroke-dasharray: calc(var(--len) * var(--prog)) var(--len);
-}
-
-.subway-overlay .tracker{
-  opacity: 0;
-  pointer-events: none;
-  transition-property: transform, opacity;
-  transition-timing-function: var(--ease), linear;
-  transition-duration: 0.6s, 0.22s;
-}
-.subway-overlay .route.is-active .tracker{ opacity: 1; }
-.subway-overlay .route.is-leaving .tracker{ opacity: 0; }
-.subway-overlay .route.no-anim .line-active,
-.subway-overlay .route.no-anim .tracker{ transition: none !important; }
-
-.subway-overlay .tracker-dot{
-  fill: currentColor;
-  stroke: var(--bg);
-  stroke-width: 5px;
-}
-.subway-overlay .tracker-pulse{
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 4px;
-  opacity: 0.8;
-  transform-origin: center;
-  animation: subwayPulse 1.1s infinite ease-out;
-}
-@keyframes subwayPulse{
-  0%   { transform: scale(0.75); opacity: 0.65; }
-  100% { transform: scale(1.8);  opacity: 0; }
-}
-
-.subway-overlay .station-hit{ fill: transparent; cursor: pointer; }
-.subway-overlay .station-node{ fill: #fff; stroke: var(--ink); stroke-width: var(--node-stroke); }
-.subway-overlay .station-node.interchange{ stroke-width: calc(var(--node-stroke) + 1px); }
-.subway-overlay .station-ring{ fill: none; stroke: rgba(255,255,255,0.9); stroke-width: calc(var(--node-stroke) + 6px); opacity: 0.9; }
-
-.subway-overlay .station-label{
-  font-size: 16px;
-  paint-order: stroke;
-  stroke: var(--bg);
-  stroke-width: 6px;
-  stroke-linejoin: round;
-  user-select:none;
-  fill: rgba(0,0,0,0.95);
-}
-
-.subway-overlay .station:hover .station-node,
-.subway-overlay .station:focus-visible .station-node{ stroke-width: calc(var(--node-stroke) + 1px); }
-
-.subway-overlay .station.is-active .station-node{ fill: rgba(0,0,0,0.95); }
-.subway-overlay .station.is-active .station-label{ font-weight: 700; }
-
-.subway-overlay .subway-tooltip{
-  position: absolute;
-  padding: 6px 10px;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.78);
-  color: #fff;
-  font-size: 12px;
-  line-height: 1;
-  transform: translate(-50%, -140%);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 120ms ease;
-  white-space: nowrap;
-  z-index: 2;
-}
-.subway-overlay .subway-tooltip.is-visible{ opacity: 1; }
-
-body.bg-night .subway-overlay{
-  --panel-bg: rgba(15,18,24,0.45);
-  --panel-border: rgba(255,255,255,0.12);
-  --bg: rgba(15,18,24,0.75);
-  --ink: rgba(245,245,245,0.95);
-  --inactive: rgba(235,238,244,0.22);
-}
-body.bg-night .subway-overlay .station-label{ fill: rgba(245,245,245,0.92); }
-body.bg-night .subway-overlay .station-node{ fill: rgba(15,18,24,0.25); stroke: var(--ink); }
-
-/* ===== Profile card pinned to video top-right corner ===== */
-.back-img { position: absolute; }
-.back-img .video-profile-card{
-  position: absolute !important;
-  top: 0 !important;
-  right: 0 !important;
-  left: auto !important;
-  bottom: auto !important;
-  margin: 0 !important;
-  transform: none !important;
-  z-index: 10 !important;
 }
